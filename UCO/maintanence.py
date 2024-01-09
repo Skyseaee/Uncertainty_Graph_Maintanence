@@ -213,12 +213,12 @@ def main():
     k_core = len(heaps[0])
     # print(k_core)
     # UCO.print_res(heaps)
+    for i in range(10):
+        indexes_of_changed_points = pipeline_change_map(graph, True)
 
-    indexes_of_changed_points = pipeline_change_map(graph, True)
+        UCO.UCO_Index(graph)
 
-    UCO.UCO_Index(graph)
-
-    core_maintenance(k_core, heaps, indexes_of_changed_points, graph)
+        core_maintenance(k_core, heaps, indexes_of_changed_points, graph)
     # UCO.print_res(transpose_matrix(res))
 
 
