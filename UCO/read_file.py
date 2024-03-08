@@ -13,8 +13,7 @@ def read_file(path: str):
             info = line.split(" ")
             assert (len(info) >= 3 or info[1] == info[2]), "file's format is incorrect."
             v1, v2, prob = int(info[0]), int(info[1]), float(info[2])
-            # if v1 > 300 or v2 > 300:
-            #     continue
+
             max_prob = max(max_prob, prob)
             max_index = max(max_index, max(v1, v2))
             index.append([v1, v2, prob])
