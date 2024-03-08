@@ -100,6 +100,7 @@ def graph_is_empty(graph: [[]]) -> bool:
 
 def remove_edge_from_graph(graph: [[]], x: int, y: int):
     graph[x][y] = .0
+    graph[y][x] = .0
 
 
 def print_res(index: [[]]):
