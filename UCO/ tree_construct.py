@@ -1,9 +1,11 @@
 # UCF Construct
 import sys
 import copy
+from functools import cmp_to_key
+
 import UCO
 import heap
-from maintenance import delete_edges
+from maintanence import delete_edges
 
 class TreeNode:
     nodes: []
@@ -11,7 +13,16 @@ class TreeNode:
     children: []
     k: int
     upper_threshold: float
-    down_threshold: float
+    lower_threshold: float
+
+    def __init__(self, nodes, k, threshold):
+        self.nodes = nodes
+        self.k = k
+        self.upper_threshold = threshold
+        self.lower_threshold = threshold
+
+    def get_threshold(self) -> float:
+        return max(self.upper_threshold, self.lower_threshold)
 
 
 def construct_tree(graph: [[]], k_probs: [[]], edge: [], threshold=0.1):
@@ -51,7 +62,7 @@ def construct_tree(graph: [[]], k_probs: [[]], edge: [], threshold=0.1):
                     heaps = heap.Heap(probs_index, compare=lambda a, b: a[0] > b[0])
                     heaps.heapify()
 
-        construct_eta_k_tree()
+        construct_eta_k_tree(graph, k, S, eta_threshold)
     
 
 
@@ -109,3 +120,65 @@ def extract_graph(graph, k, cores):
     temp_graph = copy.deepcopy(graph)
     delete_edges(temp_graph, vertex)
     return temp_graph, set(vertex)
+
+
+def find_connected_component(graph, vertexes) -> [[]]:
+    if len(vertexes) <= 1:
+        return [vertexes]
+    
+    node_index, n, group = 0, len(vertexes), 0
+
+    res = [-1 for _ in range(n)]
+    res[node_index] = group
+
+    while node_index < n:
+        find_more = True
+        neighbor = set([i for i, v in enumerate(graph[vertexes[node_index]]) if v != 0])
+
+        while find_more:
+            find_more = False
+            for v in vertexes:
+                if res[v] == -1 and v in neighbor:
+                    res[v] = res[node_index]
+                    find_more = True
+                    neighbor = neighbor | set([i for i, v in enumerate(graph[v]) if v != 0])
+        
+        i = 0
+        while i < n and res[i] != -1:
+            i += 1
+        node_index = i
+        group += 1
+    
+    ans = [[] for _ in range(group)]
+    for i, r in enumerate(res):
+        ans[r].append(i)  
+    return ans  
+
+
+def find_neighbors(graph, vertexes):
+    neighbor = set()
+    for v in vertexes:
+        neighbor = neighbor | set([i for i, v in enumerate(graph[v]) if v != 0])
+    
+    return neighbor
+
+        
+def construct_eta_k_tree(graph: [[]], k: int, stack: [], eta_threshold: []):
+    while len(stack) != 0:
+        node = stack[-1]
+        stack = stack[:-1]
+        ct = eta_threshold[node]
+        H = []
+        while len(stack) != 0 and eta_threshold[stack[-1]] == ct:
+            H.append(stack[-1])
+            stack = stack[:-1]
+        
+        for connected in find_connected_component(graph, H):
+            X_treeNode = TreeNode(connected, k, ct)
+            for v in find_neighbors(graph, connected):
+                if eta_threshold[v] < ct:
+                    continue
+                # 1. get the node containing v (Y)
+                # 2. get the root of Y (Z)
+                
+                pass
