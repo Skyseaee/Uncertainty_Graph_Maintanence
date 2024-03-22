@@ -1,4 +1,4 @@
-class UnionFindSet():
+class UnionFindSet:
     def __init__(self, data_list):
         self.father_dict = {}
         self.size_dict = {}

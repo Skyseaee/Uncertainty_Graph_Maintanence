@@ -7,42 +7,73 @@ import UCO
 import heap
 from maintanence import delete_edges
 
+
 class TreeNode:
-    nodes: []
-    threshold: float
-    children: []
-    k: int
-    upper_threshold: float
-    lower_threshold: float
+    # nodes: []
+    # children: set
+    # k: int
+    # upper_threshold: float
+    # lower_threshold: float
+    # father: 'TreeNode'
 
     def __init__(self, nodes, k, threshold):
         self.nodes = nodes
         self.k = k
         self.upper_threshold = threshold
         self.lower_threshold = threshold
+        self.father = None
+        self.children = set()
+
+    def set_father(self, father: 'TreeNode'):
+        self.father = father
+        if not hasattr(father, 'children'):  # 检查father是否有children属性
+            father.children = set()
+        father.children.add(self)
 
     def get_threshold(self) -> float:
         return max(self.upper_threshold, self.lower_threshold)
 
+    def merge_node(self, node: 'TreeNode'):
+        self.nodes.append(node.nodes)
+        self.children = self.children | node.children
 
-def construct_tree(graph: [[]], k_probs: [[]], edge: [], threshold=0.1):
+    def __str__(self):
+        return ','.join(str(node) for node in self.nodes) \
+            + ('->' + '->'.join([str(c) for c in self.children]) if len(self.children) != 0 else ' |')
+
+
+class BottomTreeNode(TreeNode):
+    def __init__(self, nodes, k, threshold=1):
+        super().__init__(nodes, k, threshold)
+        self.father = list()
+
+    def set_father(self, father: 'TreeNode'):
+        if father in self.father:
+            return
+        self.father.append(father)
+        father.children.add(self)
+
+
+def construct_tree(graph: [[]], threshold=0.01):
     assert threshold <= 0.1, "threshold is too big"
     # compare core
-    core = cal_core(graph)
+    core = cal_core(copy.deepcopy(graph))
     cores = [[i, c] for i, c in enumerate(core)]
-    sorted(cores, key=cmp_to_key(lambda x, y: y[1] - x[1]))
+
+    cores = sorted(cores, key=lambda x: x[1], reverse=True)
     k_max = cores[0][1]
+    forest = {}
     for k in range(k_max, 0, -1):        
-        temp_graph, vertex = extract_graph(graph, k)
+        temp_graph, vertex = extract_graph(graph, k, cores)
         probs = [UCO.cal_prob(temp_graph, index, k) for index in vertex]
         cur_thres = 0
         S = list() # S is a stack
-        eta_threshold = [0 for _ in range(len(vertex))]
+        eta_threshold = [0 for _ in range(len(graph))]
         probs_index = [[prob, i] for i, prob in enumerate(probs)]
         heaps = heap.Heap(probs_index, compare=lambda a, b: a[0] > b[0])
         heaps.heapify()
 
-        while UCO.graph_is_empty(temp_graph):
+        while not UCO.graph_is_empty(temp_graph):
             u = heaps.heap_pop()
             cur_thres = max(cur_thres, u[0])
             eta_threshold[u[1]] = cur_thres
@@ -56,43 +87,48 @@ def construct_tree(graph: [[]], k_probs: [[]], edge: [], threshold=0.1):
                     UCO.remove_edge_from_graph(temp_graph, u[1], i)
 
                     # update k probs
-
                     probs = [UCO.cal_prob(temp_graph, index, k) for index in vertex]
                     probs_index = [[prob, i] for i, prob in zip(vertex, probs)]
                     heaps = heap.Heap(probs_index, compare=lambda a, b: a[0] > b[0])
                     heaps.heapify()
 
-        construct_eta_k_tree(graph, k, S, eta_threshold)
-    
+        print(k, S, eta_threshold)
+        forest[k] = construct_eta_k_tree(copy.deepcopy(graph), k, S, eta_threshold)
+    return forest
 
 
 def cal_core(graph: [[]]):
     n = len(graph)
     core = list(range(n))
     vertex = set(list(range(n)))
+    visited = [False for _ in range(n)]
     while len(vertex) != 0:
         degree = degree_certain_graph(graph)
-        index = find_min(degree)
+        index = find_min(degree, visited)
         k = degree[index]
-        temp_vertex = []
-        while degree[index] <= k:
+        while index != -1 and degree[index] <= k:
             core[index] = k
             # remove edge
             for i in range(n):
                 if graph[index][i] != 0:
                     degree[i] -= 1
-            
+                    degree[index] -= 1
+                    graph[index][i] = .0
+                    graph[i][index] = .0
+
+            visited[index] = True
             vertex.remove(index)
             # update index
-            index = find_min(degree)
-
+            index = find_min(degree, visited)
 
     return core
 
 
-def find_min(degree):
+def find_min(degree, visited):
     index, k = -1, sys.maxsize
     for i, d in enumerate(degree):
+        if visited[i]:
+            continue
         if d < k:
             k = d
             index = i
@@ -102,7 +138,7 @@ def find_min(degree):
 
 def degree_certain_graph(graph: [[]]):
     n = len(graph)
-    vertex = list(range(n))
+    vertex = [0 for _ in range(n)]
     for i, g in enumerate(graph):
         for p in g:
             if p != 0:
@@ -137,9 +173,9 @@ def find_connected_component(graph, vertexes) -> [[]]:
 
         while find_more:
             find_more = False
-            for v in vertexes:
-                if res[v] == -1 and v in neighbor:
-                    res[v] = res[node_index]
+            for k, v in enumerate(vertexes):
+                if res[k] == -1 and v in neighbor:
+                    res[k] = res[node_index]
                     find_more = True
                     neighbor = neighbor | set([i for i, v in enumerate(graph[v]) if v != 0])
         
@@ -148,37 +184,94 @@ def find_connected_component(graph, vertexes) -> [[]]:
             i += 1
         node_index = i
         group += 1
-    
+        if node_index < n:
+            res[node_index] = group
+
     ans = [[] for _ in range(group)]
     for i, r in enumerate(res):
-        ans[r].append(i)  
+        ans[r].append(vertexes[i])
     return ans  
 
 
 def find_neighbors(graph, vertexes):
     neighbor = set()
     for v in vertexes:
-        neighbor = neighbor | set([i for i, v in enumerate(graph[v]) if v != 0])
+        neighbor = neighbor | set([i for i, p in enumerate(graph[v]) if p != 0])
     
     return neighbor
 
-        
+
+def find_node(bottom: TreeNode, v) -> TreeNode:
+    if not bottom:
+        return None
+    if v in bottom.nodes:
+        return bottom
+    if isinstance(bottom, BottomTreeNode):
+        for father in bottom.father:
+            node = find_node(father, v)
+            if node:
+                return node
+    else:
+        node = find_node(bottom, v)
+        if node:
+            return node
+
+
+def get_root(node: TreeNode) -> TreeNode:
+    if isinstance(node, BottomTreeNode):
+        return node
+
+    while node.father:
+        node = node.father
+    return node
+
+
 def construct_eta_k_tree(graph: [[]], k: int, stack: [], eta_threshold: []):
+    bottom = BottomTreeNode([], k, 1)
     while len(stack) != 0:
         node = stack[-1]
         stack = stack[:-1]
         ct = eta_threshold[node]
-        H = []
+        H = [node]
         while len(stack) != 0 and eta_threshold[stack[-1]] == ct:
             H.append(stack[-1])
             stack = stack[:-1]
-        
+        if k == 2:
+            print('H', H)
         for connected in find_connected_component(graph, H):
-            X_treeNode = TreeNode(connected, k, ct)
+            print('connected', connected)
+            x_treeNode = TreeNode(connected, k, ct)
+            bottom.set_father(x_treeNode)
             for v in find_neighbors(graph, connected):
-                if eta_threshold[v] < ct:
+                if v in connected or eta_threshold[v] < ct:
                     continue
                 # 1. get the node containing v (Y)
+                print(v, eta_threshold[v], ct, [i.nodes for i in bottom.father])
+                y_treeNode = find_node(bottom, v)
                 # 2. get the root of Y (Z)
-                
-                pass
+                z_treenode = get_root(y_treeNode)
+                print("get root: ", z_treenode)
+                if z_treenode.get_threshold() > x_treeNode.get_threshold():
+                    z_treenode.set_father(x_treeNode)
+                else:
+                    x_treeNode.merge_node(z_treenode)
+
+    return get_root(bottom)
+
+
+if __name__ == '__main__':
+    graph = [
+        [.0, .5, .2, .0, .0, .0, .0, .0, .0, .0],
+        [.5, .0, .8, .2, .6, .0, .0, .0, .0, .0],
+        [.2, .8, .0, .5, .8, .0, .0, .0, .0, .0],
+        [.0, .2, .5, .0, .4, .0, .0, .0, .0, .0],
+        [.0, .6, .8, .4, .0, .2, .0, .0, .0, .0],
+        [.0, .0, .0, .0, .2, .0, .5, .0, .0, .0],
+        [.0, .0, .0, .0, .0, .5, .0, .8, .5, .8],
+        [.0, .0, .0, .0, .0, .0, .8, .0, .0, .0],
+        [.0, .0, .0, .0, .0, .0, .5, .0, .0, .8],
+        [.0, .0, .0, .0, .0, .0, .8, .0, .8, .0],
+    ]
+
+    for k, tree in construct_tree(graph).items():
+        print(k, tree)
