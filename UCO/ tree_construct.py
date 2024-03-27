@@ -24,22 +24,25 @@ class TreeNode:
         self.father = None
         self.children = set()
 
-    def set_father(self, father: 'TreeNode'):
+    def set_father(self, father: 'TreeNode', bottom):
         self.father = father
         if not hasattr(father, 'children'):  # 检查father是否有children属性
             father.children = set()
         father.children.add(self)
+        if bottom in father.children:
+            father.children.remove(bottom)
 
     def get_threshold(self) -> float:
         return max(self.upper_threshold, self.lower_threshold)
 
     def merge_node(self, node: 'TreeNode'):
-        self.nodes.append(node.nodes)
+        self.nodes.extend(node.nodes)
+        self.nodes = list(set(self.nodes))
         self.children = self.children | node.children
 
     def __str__(self):
         return ','.join(str(node) for node in self.nodes) \
-            + ('->' + '->'.join([str(c) for c in self.children]) if len(self.children) != 0 else ' |')
+            + ('->' + '->'.join([str(c) for c in self.children]))
 
 
 class BottomTreeNode(TreeNode):
@@ -52,6 +55,9 @@ class BottomTreeNode(TreeNode):
             return
         self.father.append(father)
         father.children.add(self)
+
+    def __str__(self):
+        return "buttom" + "|"
 
 
 def construct_tree(graph: [[]], threshold=0.01):
@@ -92,7 +98,7 @@ def construct_tree(graph: [[]], threshold=0.01):
                     heaps = heap.Heap(probs_index, compare=lambda a, b: a[0] > b[0])
                     heaps.heapify()
 
-        print('cal threshold', k, S, eta_threshold)
+        print('cal', k, S, eta_threshold)
         forest[k] = construct_eta_k_tree(copy.deepcopy(graph), k, S, eta_threshold)
     return forest
 
@@ -158,10 +164,16 @@ def extract_graph(graph, k, cores):
     return temp_graph, set(vertex)
 
 
-def find_connected_component(graph, vertexes) -> [[]]:
+def find_connected_component(graph, vertexes, visited: []) -> [[]]:
     if len(vertexes) <= 1:
         return [vertexes]
-    
+
+    vertex = vertexes.copy()
+
+    for i, v in enumerate(visited):
+        if v and i not in vertexes:
+            vertexes.append(i)
+
     node_index, n, group = 0, len(vertexes), 0
 
     res = [-1 for _ in range(n)]
@@ -188,9 +200,13 @@ def find_connected_component(graph, vertexes) -> [[]]:
             res[node_index] = group
 
     ans = [[] for _ in range(group)]
+    # print('group', res, vertex)
     for i, r in enumerate(res):
+        if vertexes[i] not in vertex:
+            continue
         ans[r].append(vertexes[i])
-    return ans  
+
+    return [a for a in ans if len(a) != 0]
 
 
 def find_neighbors(graph, vertexes):
@@ -219,7 +235,7 @@ def find_node(bottom: TreeNode, v) -> TreeNode:
 
 def get_root(node: TreeNode) -> TreeNode:
     if isinstance(node, BottomTreeNode):
-        return node
+        return get_root(node.father[0]) if len(node.father) > 0 else node
 
     while node.father:
         # print('father: ', node.father)
@@ -229,6 +245,7 @@ def get_root(node: TreeNode) -> TreeNode:
 
 def construct_eta_k_tree(graph: [[]], k: int, stack: [], eta_threshold: []):
     bottom = BottomTreeNode([], k, 1)
+    visited = [False for _ in range(len(graph))]
     while len(stack) != 0:
         node = stack[-1]
         stack = stack[:-1]
@@ -238,8 +255,11 @@ def construct_eta_k_tree(graph: [[]], k: int, stack: [], eta_threshold: []):
             H.append(stack[-1])
             stack = stack[:-1]
 
-        for connected in find_connected_component(graph, H):
-            # print('connected', connected)
+        print('H', H, visited)
+        for connected in find_connected_component(graph, H, visited):
+            print('connected', connected)
+            for c in connected:
+                visited[c] = True
             x_treeNode = TreeNode(connected, k, ct)
             bottom.set_father(x_treeNode)
             for v in find_neighbors(graph, connected):
@@ -252,8 +272,7 @@ def construct_eta_k_tree(graph: [[]], k: int, stack: [], eta_threshold: []):
                 z_treenode = get_root(y_treeNode)
                 # print("get root: ", z_treenode.get_threshold(), 'node is:', x_treeNode.get_threshold())
                 if z_treenode.get_threshold() > x_treeNode.get_threshold():
-                    z_treenode.set_father(x_treeNode)
-                    # print('set father', x_treeNode)
+                    z_treenode.set_father(x_treeNode, bottom)
                 else:
                     x_treeNode.merge_node(z_treenode)
 
