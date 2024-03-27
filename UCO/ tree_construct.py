@@ -1,10 +1,10 @@
 # UCF Construct
 import sys
 import copy
-from functools import cmp_to_key
 
 import UCO
 import heap
+import decorate
 from maintanence import delete_edges
 
 
@@ -60,6 +60,7 @@ class BottomTreeNode(TreeNode):
         return "buttom" + "|"
 
 
+@decorate.wrapper
 def construct_tree(graph: [[]], threshold=0.01):
     """
     fin function of this proj
