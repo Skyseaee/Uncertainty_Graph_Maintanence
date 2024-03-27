@@ -1,6 +1,6 @@
 import copy
 import traceback
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ProcessPoolExecutor
 
 import UCO
 import heap
@@ -169,11 +169,11 @@ def delete_edges(graph: [[]], updating_vertex: []):
     return graph
 
 
-def transpose_matrix(k_probs: [[]]):
+def transpose_matrix(k_probs: [[]], k_cores):
     try:
-        res = [[] for _ in range(len(k_probs[0]))]
+        res = [[] for _ in range(k_cores)]
         for i in range(len(k_probs)):
-            for j in range(len(k_probs[0])):
+            for j in range(k_cores):
                 if j < len(k_probs[i]):
                     res[j].append(k_probs[i][j])
                 else:
@@ -201,7 +201,7 @@ def change_graph(graph: [[]]):
 def core_maintenance(k_core, origin_heap, changed_points, graph):
     final_index = []
     for i in range(1, k_core + 1):
-        final_index.append(cal_k_probs_when_inserting(graph, transpose_matrix(origin_heap), i, changed_points))
+        final_index.append(cal_k_probs_when_inserting(graph, transpose_matrix(origin_heap, k_core), i, changed_points))
 
     return final_index
 
@@ -210,8 +210,10 @@ def cal_files(filename):
     graph = pipeline_read_data(filename)
 
     heaps = UCO.UCO_Index(graph)
-
     k_core = len(heaps[0])
+    for h in heaps:
+        k_core = max(k_core, len(h))
+
     for i in range(10):
         indexes_of_changed_points = pipeline_change_map(graph, True)
         UCO.UCO_Index(graph)
@@ -221,7 +223,7 @@ def cal_files(filename):
 
 def main():
     files = ['bio-CE-LC.edges', 'bio-SC-HT.edges', 'aves-geese-female-foraging.edges', 'aves-sparrow-social.edges', 'aves-thornbill-farine.edges']
-    with ThreadPoolExecutor(max_workers=10) as executor:
+    with ProcessPoolExecutor(max_workers=10) as executor:
         executor.map(cal_files, files)
 
 

@@ -1,11 +1,12 @@
 # UCF Construct
+import math
 import sys
 import copy
 
 import UCO
 import heap
 import decorate
-from maintanence import delete_edges
+from maintanence import delete_edges, find_neighbors
 
 
 class TreeNode:
@@ -16,11 +17,14 @@ class TreeNode:
     # lower_threshold: float
     # father: 'TreeNode'
 
-    def __init__(self, nodes, k, threshold):
+    def __init__(self, nodes: [], k, floor_ceil, ceil=None):
         self.nodes = nodes
         self.k = k
-        self.upper_threshold = threshold
-        self.lower_threshold = threshold
+        if ceil is None:
+            self.upper_threshold = self.lower_threshold = floor_ceil
+        else:
+            self.lower_threshold = floor_ceil
+            self.upper_threshold = ceil
         self.father = None
         self.children = set()
 
@@ -39,6 +43,41 @@ class TreeNode:
         self.nodes.extend(node.nodes)
         self.nodes = list(set(self.nodes))
         self.children = self.children | node.children
+
+    def can_merge(self, value):
+        return self.lower_threshold <= value < self.upper_threshold
+
+
+    def is_connected(self, neighbor):
+        for v in self.nodes:
+            if v in neighbor:
+                return True
+        res = False
+        for c in self.children:
+            res |= c.is_connected(neighbor)
+
+        return res
+
+    def split_node(self, v, value, graph, theshold, bottom):
+        nodes = set(self.nodes)
+        nodes.remove(v)
+        self.nodes = list(nodes)
+        merged = False
+        neighbor = set(find_neighbors(graph, v))
+        for c in self.children:
+            if c.can_merge(value):
+                if c.is_connected(neighbor):
+                    c.nodes.append(v)
+                    merged = True
+                    break
+
+        # create new node when not merged
+        if not merged:
+            treenode = TreeNode([v], self.k, math.ceil(value / theshold) * theshold - theshold, math.ceil(value / theshold) * theshold)
+            treenode.set_father(self, bottom)
+            treenode.children = bottom
+
+
 
     def __str__(self):
         return ','.join(str(node) for node in self.nodes) \
@@ -106,7 +145,7 @@ def construct_tree(graph: [[]], threshold=0.01):
                     heaps.heapify()
 
         print('cal', k, S, eta_threshold)
-        forest[k] = construct_eta_k_tree(copy.deepcopy(graph), k, S, eta_threshold)
+        forest[k] = construct_eta_k_tree(copy.deepcopy(graph), k, S, eta_threshold, threshold)
     return forest
 
 
@@ -258,6 +297,15 @@ def find_node(bottom: TreeNode, v) -> TreeNode:
             return node
 
 
+def find_node_from_up_to_down(root: 'TreeNode', v):
+    if isinstance(root, BottomTreeNode):
+        return None
+    if v in root.nodes:
+        return root
+    else:
+        for c in root.children:
+            return find_node_from_up_to_down(c, v)
+
 def get_root(node: TreeNode) -> TreeNode:
     if isinstance(node, BottomTreeNode):
         return get_root(node.father[0]) if len(node.father) > 0 else node
@@ -268,15 +316,21 @@ def get_root(node: TreeNode) -> TreeNode:
     return node
 
 
-def construct_eta_k_tree(graph: [[]], k: int, stack: [], eta_threshold: []):
+def construct_eta_k_tree(graph: [[]], k: int, stack: [], eta_threshold: [], threshold):
+    threshold_dict = {} # judge if the interval exists
+
     bottom = BottomTreeNode([], k, 1)
     visited = [False for _ in range(len(graph))]
     while len(stack) != 0:
         node = stack[-1]
         stack = stack[:-1]
         ct = eta_threshold[node]
+        ceil = math.ceil(ct / threshold) * threshold
+        floor = ceil - threshold
+        threshold_dict[floor] = {node}
         H = [node]
-        while len(stack) != 0 and eta_threshold[stack[-1]] == ct:
+
+        while len(stack) != 0 and floor <= eta_threshold[stack[-1]] <= ceil:
             H.append(stack[-1])
             stack = stack[:-1]
 
@@ -285,10 +339,11 @@ def construct_eta_k_tree(graph: [[]], k: int, stack: [], eta_threshold: []):
             # print('connected', connected)
             for c in connected:
                 visited[c] = True
-            x_treeNode = TreeNode(connected, k, ct)
+                threshold_dict[floor].add(c)
+            x_treeNode = TreeNode(connected, k, floor, ceil)
             bottom.set_father(x_treeNode)
             for v in find_neighbors(graph, connected):
-                if v in connected or eta_threshold[v] < ct:
+                if v in connected or eta_threshold[v] <= floor:
                     continue
                 # 1. get the node containing v (Y)
                 # print(v, eta_threshold[v], ct, [i.nodes for i in bottom.father])
@@ -312,8 +367,8 @@ if __name__ == '__main__':
         [.0, .2, .5, .0, .4, .0, .0, .0, .0, .0],
         [.0, .6, .8, .4, .0, .2, .0, .0, .0, .0],
         [.0, .0, .0, .0, .2, .0, .5, .0, .0, .0],
-        [.0, .0, .0, .0, .0, .5, .0, .8, .5, .8],
-        [.0, .0, .0, .0, .0, .0, .8, .0, .0, .0],
+        [.0, .0, .0, .0, .0, .5, .0, .95, .5, .8],
+        [.0, .0, .0, .0, .0, .0, .95, .0, .0, .0],
         [.0, .0, .0, .0, .0, .0, .5, .0, .0, .8],
         [.0, .0, .0, .0, .0, .0, .8, .0, .8, .0],
     ]
