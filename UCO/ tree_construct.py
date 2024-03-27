@@ -61,6 +61,12 @@ class BottomTreeNode(TreeNode):
 
 
 def construct_tree(graph: [[]], threshold=0.01):
+    """
+    fin function of this proj
+    :param graph: the 2-D matrix of graph
+    :param threshold: the threshold that set to accelerate the parse of the tree
+    :return: TreeNode
+    """
     assert threshold <= 0.1, "threshold is too big"
     # compare core
     core = cal_core(copy.deepcopy(graph))
@@ -143,6 +149,11 @@ def find_min(degree, visited):
 
 
 def degree_certain_graph(graph: [[]]):
+    """
+    calculate the origin degree of the graph
+    :param graph:
+    :return:
+    """
     n = len(graph)
     vertex = [0 for _ in range(n)]
     for i, g in enumerate(graph):
@@ -165,6 +176,13 @@ def extract_graph(graph, k, cores):
 
 
 def find_connected_component(graph, vertexes, visited: []) -> [[]]:
+    """
+    find the connected vertexes groups in the graph which the path should take the visited points into consideration.
+    :param graph:
+    :param vertexes:
+    :param visited: the points have already been visited before
+    :return: [[]]
+    """
     if len(vertexes) <= 1:
         return [vertexes]
 
@@ -218,6 +236,12 @@ def find_neighbors(graph, vertexes):
 
 
 def find_node(bottom: TreeNode, v) -> TreeNode:
+    """
+    find the node where v exists by dfs
+    :param bottom: the bottom TreeNode
+    :param v:
+    :return:
+    """
     if not bottom:
         return None
     if v in bottom.nodes:
@@ -255,9 +279,9 @@ def construct_eta_k_tree(graph: [[]], k: int, stack: [], eta_threshold: []):
             H.append(stack[-1])
             stack = stack[:-1]
 
-        print('H', H, visited)
+        # print('H', H, visited)
         for connected in find_connected_component(graph, H, visited):
-            print('connected', connected)
+            # print('connected', connected)
             for c in connected:
                 visited[c] = True
             x_treeNode = TreeNode(connected, k, ct)
