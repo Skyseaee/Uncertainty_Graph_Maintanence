@@ -1,5 +1,6 @@
 import copy
 import traceback
+from concurrent.futures import ThreadPoolExecutor
 
 import UCO
 import heap
@@ -205,21 +206,23 @@ def core_maintenance(k_core, origin_heap, changed_points, graph):
     return final_index
 
 
-def main():
-    graph = pipeline_read_data('bio-CE-LC.edges')
+def cal_files(filename):
+    graph = pipeline_read_data(filename)
 
     heaps = UCO.UCO_Index(graph)
 
     k_core = len(heaps[0])
-    # print(k_core)
-    # UCO.print_res(heaps)
     for i in range(10):
         indexes_of_changed_points = pipeline_change_map(graph, True)
-
         UCO.UCO_Index(graph)
 
-        core_maintenance(k_core, heaps, indexes_of_changed_points, graph)
-    # UCO.print_res(transpose_matrix(res))
+        core_maintenance(k_core, heaps, indexes_of_changed_points, copy.deepcopy(graph))
+
+
+def main():
+    files = ['bio-CE-LC.edges', 'bio-SC-HT.edges', 'aves-geese-female-foraging.edges', 'aves-sparrow-social.edges', 'aves-thornbill-farine.edges']
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        executor.map(cal_files, files)
 
 
 if __name__ == '__main__':
