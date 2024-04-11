@@ -178,8 +178,10 @@
 03/09/2024 07:57:31 AM: func time is 723.003610s
 03/09/2024 12:25:10 PM: func time is 16058.900461s
 03/09/2024 12:39:26 PM: func time is 853.743705s
+
 03/22/2024 06:14:02 PM: func time is 0.009801s
 03/22/2024 06:14:13 PM: func time is 0.013487s
+
 03/26/2024 12:23:48 PM: func time is 0.012461s
 03/27/2024 04:07:14 PM: func time is 0.005944s
 03/27/2024 04:36:34 PM: func time is 0.005445s
@@ -232,3 +234,256 @@
 03/27/2024 05:51:16 PM: func time is 0.001522s
 03/27/2024 05:51:17 PM: func time is 0.012475s
 03/27/2024 05:51:17 PM: func time is 0.001557s
+03/27/2024 08:12:29 PM: func time is 0.011569s
+03/27/2024 08:12:29 PM: func time is 0.004656s
+03/27/2024 08:13:20 PM: func time is 0.011698s
+03/27/2024 08:13:20 PM: func time is 0.004706s
+03/27/2024 08:13:20 PM: func time is 0.000772s
+03/27/2024 08:14:13 PM: func time is 0.014077s
+03/27/2024 08:14:13 PM: func time is 0.006990s
+03/27/2024 08:14:13 PM: func time is 0.003140s
+03/27/2024 08:14:24 PM: func time is 0.011224s
+03/27/2024 08:14:24 PM: func time is 0.004651s
+03/27/2024 08:14:24 PM: func time is 0.002248s
+03/27/2024 08:14:37 PM: func time is 0.011884s
+03/27/2024 08:14:37 PM: func time is 0.004520s
+03/27/2024 08:14:37 PM: func time is 0.001281s
+03/27/2024 08:14:48 PM: func time is 0.011599s
+03/27/2024 08:14:48 PM: func time is 0.004923s
+03/27/2024 08:14:48 PM: func time is 0.002471s
+03/27/2024 08:15:22 PM: func time is 0.011820s
+03/27/2024 08:15:22 PM: func time is 0.005044s
+03/27/2024 08:15:22 PM: func time is 0.002366s
+03/27/2024 08:16:21 PM: func time is 0.011239s
+03/27/2024 08:16:21 PM: func time is 0.004422s
+03/27/2024 08:16:21 PM: func time is 0.001343s
+03/27/2024 08:16:46 PM: func time is 0.011687s
+03/27/2024 08:16:46 PM: func time is 0.004608s
+03/27/2024 08:16:46 PM: func time is 0.002733s
+03/27/2024 08:17:29 PM: func time is 0.011679s
+03/27/2024 08:17:29 PM: func time is 0.004874s
+03/27/2024 08:17:29 PM: func time is 0.002349s
+03/27/2024 08:18:43 PM: func time is 0.018429s
+03/27/2024 08:18:43 PM: func time is 0.007320s
+03/27/2024 08:18:43 PM: func time is 0.002155s
+03/27/2024 08:19:12 PM: func time is 0.012213s
+03/27/2024 08:19:12 PM: func time is 0.004781s
+03/27/2024 08:19:12 PM: func time is 0.002339s
+03/27/2024 08:19:25 PM: func time is 0.011431s
+03/27/2024 08:19:25 PM: func time is 0.004399s
+03/27/2024 08:19:25 PM: func time is 0.002435s
+03/27/2024 08:19:38 PM: func time is 0.013960s
+03/27/2024 08:19:38 PM: func time is 0.005482s
+03/27/2024 08:19:38 PM: func time is 0.002155s
+03/27/2024 08:21:16 PM: func time is 0.012004s
+03/27/2024 08:21:16 PM: func time is 0.004796s
+03/27/2024 08:21:16 PM: func time is 0.002469s
+03/27/2024 08:21:27 PM: func time is 0.017229s
+03/27/2024 08:21:27 PM: func time is 0.006642s
+03/27/2024 08:21:27 PM: func time is 0.001078s
+03/27/2024 08:21:44 PM: func time is 0.011270s
+03/27/2024 08:21:44 PM: func time is 0.004415s
+03/27/2024 08:21:44 PM: func time is 0.002049s
+03/27/2024 08:22:10 PM: func time is 0.011440s
+03/27/2024 08:22:10 PM: func time is 0.004826s
+03/27/2024 08:22:10 PM: func time is 0.002438s
+03/27/2024 08:22:45 PM: func time is 0.011640s
+03/27/2024 08:22:45 PM: func time is 0.004878s
+03/27/2024 08:22:45 PM: func time is 0.001300s
+03/27/2024 08:22:45 PM: func time is 0.001579s
+03/27/2024 08:22:58 PM: func time is 0.011326s
+03/27/2024 08:22:58 PM: func time is 0.004555s
+03/27/2024 08:22:58 PM: func time is 0.001373s
+03/27/2024 08:23:04 PM: func time is 0.011028s
+03/27/2024 08:23:04 PM: func time is 0.004303s
+03/27/2024 08:23:04 PM: func time is 0.002218s
+03/27/2024 08:23:30 PM: func time is 0.011831s
+03/27/2024 08:23:30 PM: func time is 0.004699s
+03/27/2024 08:23:30 PM: func time is 0.002181s
+03/27/2024 08:23:30 PM: func time is 0.002436s
+03/27/2024 08:23:36 PM: func time is 0.011373s
+03/27/2024 08:23:36 PM: func time is 0.004591s
+03/27/2024 08:23:36 PM: func time is 0.002096s
+03/27/2024 08:23:36 PM: func time is 0.002501s
+03/27/2024 08:23:39 PM: func time is 0.011466s
+03/27/2024 08:23:39 PM: func time is 0.004752s
+03/27/2024 08:23:39 PM: func time is 0.000777s
+03/27/2024 08:23:39 PM: func time is 0.000990s
+03/27/2024 08:23:41 PM: func time is 0.019704s
+03/27/2024 08:23:41 PM: func time is 0.004766s
+03/27/2024 08:23:41 PM: func time is 0.002131s
+03/27/2024 08:23:41 PM: func time is 0.002391s
+03/27/2024 08:23:42 PM: func time is 0.011451s
+03/27/2024 08:23:42 PM: func time is 0.004621s
+03/27/2024 08:23:42 PM: func time is 0.001331s
+03/27/2024 08:23:42 PM: func time is 0.001560s
+03/27/2024 08:23:44 PM: func time is 0.011902s
+03/27/2024 08:23:44 PM: func time is 0.004863s
+03/27/2024 08:23:44 PM: func time is 0.002524s
+03/27/2024 08:23:44 PM: func time is 0.003081s
+03/27/2024 08:23:46 PM: func time is 0.011673s
+03/27/2024 08:23:46 PM: func time is 0.004890s
+03/27/2024 08:23:46 PM: func time is 0.002723s
+03/27/2024 08:24:03 PM: func time is 0.011429s
+03/27/2024 08:24:03 PM: func time is 0.004513s
+03/27/2024 08:24:03 PM: func time is 0.001395s
+03/27/2024 08:24:03 PM: func time is 0.001651s
+03/27/2024 08:24:06 PM: func time is 0.011427s
+03/27/2024 08:24:06 PM: func time is 0.004522s
+03/27/2024 08:24:06 PM: func time is 0.001254s
+03/27/2024 08:24:06 PM: func time is 0.001470s
+03/27/2024 08:24:45 PM: func time is 0.011384s
+03/27/2024 08:24:45 PM: func time is 0.004584s
+03/27/2024 08:24:45 PM: func time is 0.001361s
+03/27/2024 08:26:49 PM: func time is 0.011872s
+03/27/2024 08:26:49 PM: func time is 0.004928s
+03/27/2024 08:26:49 PM: func time is 0.002358s
+03/27/2024 08:26:49 PM: func time is 0.002713s
+03/27/2024 08:26:54 PM: func time is 0.011671s
+03/27/2024 08:26:54 PM: func time is 0.004682s
+03/27/2024 08:26:54 PM: func time is 0.002352s
+03/27/2024 08:27:59 PM: func time is 0.012063s
+03/27/2024 08:27:59 PM: func time is 0.004579s
+03/27/2024 08:27:59 PM: func time is 0.000741s
+03/27/2024 08:27:59 PM: func time is 0.000923s
+03/27/2024 08:28:02 PM: func time is 0.013509s
+03/27/2024 08:28:02 PM: func time is 0.006092s
+03/27/2024 08:28:02 PM: func time is 0.002069s
+03/27/2024 08:28:46 PM: func time is 0.013086s
+03/27/2024 08:28:46 PM: func time is 0.011912s
+03/27/2024 08:28:46 PM: func time is 0.001379s
+03/27/2024 08:28:46 PM: func time is 0.001644s
+03/27/2024 08:28:48 PM: func time is 0.011609s
+03/27/2024 08:28:48 PM: func time is 0.004817s
+03/27/2024 08:28:48 PM: func time is 0.000649s
+03/27/2024 08:28:48 PM: func time is 0.000865s
+03/27/2024 08:28:49 PM: func time is 0.011697s
+03/27/2024 08:28:49 PM: func time is 0.004458s
+03/27/2024 08:28:49 PM: func time is 0.002551s
+03/27/2024 08:29:19 PM: func time is 0.010808s
+03/27/2024 08:29:19 PM: func time is 0.004268s
+03/27/2024 08:29:19 PM: func time is 0.001585s
+03/27/2024 08:29:58 PM: func time is 0.016751s
+03/27/2024 08:29:58 PM: func time is 0.006694s
+03/27/2024 08:29:58 PM: func time is 0.003666s
+03/27/2024 08:29:58 PM: func time is 0.004265s
+03/27/2024 08:30:00 PM: func time is 0.016496s
+03/27/2024 08:30:00 PM: func time is 0.005578s
+03/27/2024 08:30:00 PM: func time is 0.001679s
+03/27/2024 08:30:00 PM: func time is 0.002069s
+03/27/2024 08:30:01 PM: func time is 0.013037s
+03/27/2024 08:30:01 PM: func time is 0.004673s
+03/27/2024 08:30:01 PM: func time is 0.002592s
+03/27/2024 08:30:01 PM: func time is 0.002896s
+03/27/2024 08:30:02 PM: func time is 0.053402s
+03/27/2024 08:30:02 PM: func time is 0.004310s
+03/27/2024 08:30:02 PM: func time is 0.001249s
+03/27/2024 08:30:02 PM: func time is 0.001478s
+03/27/2024 08:30:04 PM: func time is 0.011721s
+03/27/2024 08:30:04 PM: func time is 0.004654s
+03/27/2024 08:30:04 PM: func time is 0.001456s
+03/27/2024 08:30:04 PM: func time is 0.001719s
+03/27/2024 08:30:05 PM: func time is 0.012157s
+03/27/2024 08:30:05 PM: func time is 0.004572s
+03/27/2024 08:30:05 PM: func time is 0.000572s
+03/27/2024 08:30:05 PM: func time is 0.000752s
+03/27/2024 08:30:06 PM: func time is 0.019968s
+03/27/2024 08:30:06 PM: func time is 0.005065s
+03/27/2024 08:30:06 PM: func time is 0.001376s
+03/27/2024 08:31:19 PM: func time is 0.011493s
+03/27/2024 08:31:19 PM: func time is 0.004583s
+03/27/2024 08:31:19 PM: func time is 0.002164s
+03/27/2024 08:31:19 PM: func time is 0.002440s
+03/27/2024 08:31:30 PM: func time is 0.011837s
+03/27/2024 08:31:30 PM: func time is 0.004791s
+03/27/2024 08:31:30 PM: func time is 0.001240s
+03/27/2024 08:31:30 PM: func time is 0.001438s
+03/27/2024 08:33:48 PM: func time is 0.012148s
+03/27/2024 08:33:48 PM: func time is 0.004774s
+03/27/2024 08:33:48 PM: func time is 0.000737s
+03/27/2024 08:33:48 PM: func time is 0.000954s
+
+04/02/2024 05:54:34 PM: func time is 1.613449s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:35 PM: func time is 1.646304s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:35 PM: func time is 0.023849s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:37 PM: func time is 1.639724s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:37 PM: func time is 0.020347s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:39 PM: func time is 1.704275s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:39 PM: func time is 0.024049s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:40 PM: func time is 1.659195s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:40 PM: func time is 0.035674s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:42 PM: func time is 1.671471s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:42 PM: func time is 0.019500s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:44 PM: func time is 1.652113s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:44 PM: func time is 0.026036s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:45 PM: func time is 1.652789s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:46 PM: func time is 0.042831s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:47 PM: func time is 1.667936s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:47 PM: func time is 0.033373s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:49 PM: func time is 1.645074s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:49 PM: func time is 0.030141s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:51 PM: func time is 1.665857s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:51 PM: func time is 0.036463s, file is aves-geese-female-foraging.edges
+04/02/2024 05:54:55 PM: func time is 22.555009s, file is aves-sparrow-social.edges
+04/02/2024 05:55:17 PM: func time is 22.455172s, file is aves-sparrow-social.edges
+04/02/2024 05:55:18 PM: func time is 0.827694s, file is aves-sparrow-social.edges
+04/02/2024 05:55:40 PM: func time is 21.931937s, file is aves-sparrow-social.edges
+04/02/2024 05:55:40 PM: func time is 0.434230s, file is aves-sparrow-social.edges
+04/02/2024 05:56:03 PM: func time is 22.261637s, file is aves-sparrow-social.edges
+04/02/2024 05:56:03 PM: func time is 0.265955s, file is aves-sparrow-social.edges
+04/02/2024 05:56:25 PM: func time is 22.145454s, file is aves-sparrow-social.edges
+04/02/2024 05:56:25 PM: func time is 0.267740s, file is aves-sparrow-social.edges
+04/02/2024 05:56:47 PM: func time is 22.115824s, file is aves-sparrow-social.edges
+04/02/2024 05:56:47 PM: func time is 0.141972s, file is aves-sparrow-social.edges
+04/02/2024 05:57:10 PM: func time is 22.404680s, file is aves-sparrow-social.edges
+04/02/2024 05:57:10 PM: func time is 0.543874s, file is aves-sparrow-social.edges
+04/02/2024 05:57:33 PM: func time is 22.436116s, file is aves-sparrow-social.edges
+04/02/2024 05:57:33 PM: func time is 0.140293s, file is aves-sparrow-social.edges
+04/02/2024 05:57:55 PM: func time is 22.152935s, file is aves-sparrow-social.edges
+04/02/2024 05:57:55 PM: func time is 0.268594s, file is aves-sparrow-social.edges
+04/02/2024 05:58:18 PM: func time is 22.542125s, file is aves-sparrow-social.edges
+04/02/2024 05:58:19 PM: func time is 0.650629s, file is aves-sparrow-social.edges
+04/02/2024 05:58:41 PM: func time is 22.253822s, file is aves-sparrow-social.edges
+04/02/2024 05:58:42 PM: func time is 0.729439s, file is aves-sparrow-social.edges
+04/02/2024 05:59:46 PM: func time is 314.199342s, file is aves-thornbill-farine.edges
+04/02/2024 06:06:11 PM: func time is 384.983171s, file is aves-thornbill-farine.edges
+04/02/2024 06:06:13 PM: func time is 1.477986s, file is aves-thornbill-farine.edges
+04/02/2024 06:13:08 PM: func time is 414.891628s, file is aves-thornbill-farine.edges
+04/02/2024 06:13:09 PM: func time is 1.526631s, file is aves-thornbill-farine.edges
+04/02/2024 06:19:58 PM: func time is 408.967305s, file is aves-thornbill-farine.edges
+04/02/2024 06:20:06 PM: func time is 7.984619s, file is aves-thornbill-farine.edges
+04/02/2024 06:26:53 PM: func time is 406.789890s, file is aves-thornbill-farine.edges
+04/02/2024 06:26:59 PM: func time is 6.067495s, file is aves-thornbill-farine.edges
+04/02/2024 06:33:47 PM: func time is 407.992676s, file is aves-thornbill-farine.edges
+04/02/2024 06:33:54 PM: func time is 7.032167s, file is aves-thornbill-farine.edges
+04/02/2024 06:40:46 PM: func time is 411.980371s, file is aves-thornbill-farine.edges
+04/02/2024 06:40:55 PM: func time is 9.038402s, file is aves-thornbill-farine.edges
+04/02/2024 06:47:51 PM: func time is 415.675304s, file is aves-thornbill-farine.edges
+04/02/2024 06:47:53 PM: func time is 2.216532s, file is aves-thornbill-farine.edges
+04/02/2024 06:54:46 PM: func time is 413.418252s, file is aves-thornbill-farine.edges
+04/02/2024 06:54:53 PM: func time is 6.671836s, file is aves-thornbill-farine.edges
+04/02/2024 07:01:48 PM: func time is 415.269573s, file is aves-thornbill-farine.edges
+04/02/2024 07:01:50 PM: func time is 1.489395s, file is aves-thornbill-farine.edges
+04/02/2024 07:08:44 PM: func time is 414.310178s, file is aves-thornbill-farine.edges
+04/02/2024 07:08:44 PM: func time is 0.116113s, file is aves-thornbill-farine.edges
+04/02/2024 08:06:19 PM: func time is 7906.894875s, file is bio-CE-LC.edges
+04/02/2024 09:52:50 PM: func time is 6390.512250s, file is bio-CE-LC.edges
+04/02/2024 09:53:30 PM: func time is 39.642662s, file is bio-CE-LC.edges
+04/02/2024 11:32:45 PM: func time is 5955.399310s, file is bio-CE-LC.edges
+04/02/2024 11:32:54 PM: func time is 8.059642s, file is bio-CE-LC.edges
+04/03/2024 01:13:23 AM: func time is 6028.723697s, file is bio-CE-LC.edges
+04/03/2024 01:16:29 AM: func time is 185.333555s, file is bio-CE-LC.edges
+04/03/2024 02:56:01 AM: func time is 5972.080080s, file is bio-CE-LC.edges
+04/03/2024 03:11:15 AM: func time is 912.514295s, file is bio-CE-LC.edges
+04/03/2024 04:51:48 AM: func time is 6033.710048s, file is bio-CE-LC.edges
+04/03/2024 05:17:31 AM: func time is 1541.263807s, file is bio-CE-LC.edges
+04/03/2024 06:58:32 AM: func time is 6061.623361s, file is bio-CE-LC.edges
+04/03/2024 07:00:04 AM: func time is 91.222753s, file is bio-CE-LC.edges
+04/03/2024 08:40:04 AM: func time is 5999.397175s, file is bio-CE-LC.edges
+04/03/2024 08:40:48 AM: func time is 43.830707s, file is bio-CE-LC.edges
+04/03/2024 10:21:03 AM: func time is 6014.710540s, file is bio-CE-LC.edges
+04/03/2024 10:31:41 AM: func time is 636.973125s, file is bio-CE-LC.edges
+04/03/2024 12:13:29 PM: func time is 6107.833369s, file is bio-CE-LC.edges
+04/03/2024 12:20:31 PM: func time is 421.555552s, file is bio-CE-LC.edges
+04/03/2024 02:00:45 PM: func time is 6014.129420s, file is bio-CE-LC.edges
+04/03/2024 02:14:41 PM: func time is 835.401273s, file is bio-CE-LC.edges

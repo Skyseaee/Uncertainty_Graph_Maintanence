@@ -7,6 +7,7 @@ import change_graph
 import tree_construct
 import decorate
 
+
 @decorate.wrapper
 def tree_maintenance(k_core, heaps, index_of_changed_points, graph, threshold, origin_tree):
     final_index = maintanence.core_maintenance(k_core, heaps, index_of_changed_points, copy.deepcopy(graph))
@@ -14,13 +15,19 @@ def tree_maintenance(k_core, heaps, index_of_changed_points, graph, threshold, o
 
     for i in range(k_core):
         change = changed[i]
-        need_split = []
+        # need_split = []
         for k, c in enumerate(change):
-            if c != 0 and find_changed(heaps[k][i], final_index[i][k], threshold):
+            try:
+                index = heaps[k][i]
+            except Exception:
+                index = .0
+            if c == 0 or c != 0 and whether_in_same_interval(index, final_index[i][k], threshold):
                 continue
             # find the node
-            node = tree_construct.find_node_from_up_to_down(origin_tree[i], k)
-            bottom = find_bottom(origin_tree[i])
+            node = tree_construct.find_node_from_up_to_down(origin_tree[i+1], k)
+            if not node:
+                continue
+            bottom = find_bottom(origin_tree[i+1])
             # split node
             node.split_node(k, final_index[i][k], graph, threshold, bottom)
 
@@ -28,7 +35,7 @@ def find_changed(old_heap, new_heap, k_core):
     changed = [[] for _ in range(k_core)]
     for i, (old, new) in enumerate(zip(old_heap, new_heap)):
         length = max(len(old), len(new))
-        changed[i] = list(range(length))
+        changed[i] = [0 for _ in range(length)]
         for j in range(length):
             if j < len(old) and j < len(new):
                 if new[j] == old[j]:
@@ -54,7 +61,7 @@ def whether_in_same_interval(old, new, threshold):
 def find_bottom(root):
     if isinstance(root, tree_construct.BottomTreeNode):
         return root
-    return find_bottom(root.children[0])
+    return find_bottom(list(root.children)[0])
 
 
 if __name__ == '__main__':
@@ -77,4 +84,4 @@ if __name__ == '__main__':
     for h in heaps:
         k_core = max(k_core, len(h))
     indexes_of_changed_points = change_graph.pipeline_change_map(graph, True)
-    print(tree_maintenance(k_core, heaps, indexes_of_changed_points, graph, origin_tree))
+    tree_maintenance(k_core, heaps, indexes_of_changed_points, graph, 0.01, origin_tree)

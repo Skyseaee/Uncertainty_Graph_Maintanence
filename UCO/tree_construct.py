@@ -63,7 +63,7 @@ class TreeNode:
         nodes.remove(v)
         self.nodes = list(nodes)
         merged = False
-        neighbor = set(find_neighbors(graph, v))
+        neighbor = set(find_neighbors(graph, [v]))
         for c in self.children:
             if c.can_merge(value):
                 if c.is_connected(neighbor):
@@ -100,7 +100,7 @@ class BottomTreeNode(TreeNode):
 
 
 @decorate.wrapper
-def construct_tree(graph: [[]], threshold=0.01):
+def construct_tree(filename, graph: [[]], threshold=0.01):
     """
     fin function of this proj
     :param graph: the 2-D matrix of graph
@@ -304,7 +304,9 @@ def find_node_from_up_to_down(root: 'TreeNode', v):
         return root
     else:
         for c in root.children:
-            return find_node_from_up_to_down(c, v)
+            root = find_node_from_up_to_down(c, v)
+            if root:
+                return root
 
 def get_root(node: TreeNode) -> TreeNode:
     if isinstance(node, BottomTreeNode):
@@ -373,5 +375,5 @@ if __name__ == '__main__':
         [.0, .0, .0, .0, .0, .0, .8, .0, .8, .0],
     ]
 
-    for k, tree in construct_tree(graph).items():
+    for k, tree in construct_tree('tree_construct test', graph).items():
         print(k, tree)

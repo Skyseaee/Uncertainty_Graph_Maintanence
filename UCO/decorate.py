@@ -19,13 +19,14 @@ logging.basicConfig(filename=log_file,
 
 def wrapper(func):
     def inner(*args, **kwargs):
+        first_arg = args[0] if args else ''
         start_time = time.time()
         res = func(*args, **kwargs)
         end_time = time.time()
         result = end_time - start_time
         print('func time is %.6fs' % result)
         # 输出运行时间到日志文件
-        logging.info('func time is %.6fs' % result)  
+        logging.info('func time is %.6fs, file is %s' % (result, first_arg))
         return res
 
     return inner

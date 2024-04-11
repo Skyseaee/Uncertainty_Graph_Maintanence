@@ -198,7 +198,7 @@ def change_graph(graph: [[]]):
 
 
 @wrapper
-def core_maintenance(k_core, origin_heap, changed_points, graph):
+def core_maintenance(file_name, k_core, origin_heap, changed_points, graph):
     final_index = []
     for i in range(1, k_core + 1):
         final_index.append(cal_k_probs_when_inserting(graph, transpose_matrix(origin_heap, k_core), i, changed_points))
@@ -209,16 +209,16 @@ def core_maintenance(k_core, origin_heap, changed_points, graph):
 def cal_files(filename):
     graph = pipeline_read_data(filename)
 
-    heaps = UCO.UCO_Index(graph)
+    heaps = UCO.UCO_Index(filename, graph)
     k_core = len(heaps[0])
     for h in heaps:
         k_core = max(k_core, len(h))
 
     for i in range(10):
         indexes_of_changed_points = pipeline_change_map(graph, True)
-        UCO.UCO_Index(graph)
+        UCO.UCO_Index(filename, graph)
 
-        core_maintenance(k_core, heaps, indexes_of_changed_points, copy.deepcopy(graph))
+        core_maintenance(filename, k_core, heaps, indexes_of_changed_points, copy.deepcopy(graph))
 
 
 def main():

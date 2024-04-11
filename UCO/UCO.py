@@ -5,7 +5,7 @@ from decorate import wrapper
 
 
 @wrapper
-def UCO_Index(graph: [[]]):
+def UCO_Index(file_name, graph: [[]]):
     vertex_num = len(graph)
     order = [[] for _ in range(vertex_num)]
 
@@ -125,4 +125,4 @@ if __name__ == '__main__':
         [.0, .0, .0, .0, .0, .0, .8, .0, .8, .0],
     ]
 
-    print_res(UCO_Index(graph))
+    print_res(UCO_Index('', graph))
