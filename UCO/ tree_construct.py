@@ -1,6 +1,7 @@
 # UCF Construct
 import sys
 import copy
+from typing import List
 
 import UCO
 import heap
@@ -61,7 +62,7 @@ class BottomTreeNode(TreeNode):
 
 
 @decorate.wrapper
-def construct_tree(graph: [[]], threshold=0.01):
+def construct_tree(graph: List[List[float]], threshold=0.01):
     """
     fin function of this proj
     :param graph: the 2-D matrix of graph
@@ -110,7 +111,7 @@ def construct_tree(graph: [[]], threshold=0.01):
     return forest
 
 
-def cal_core(graph: [[]]):
+def cal_core(graph: List[List[float]]):
     n = len(graph)
     core = list(range(n))
     vertex = set(list(range(n)))
@@ -149,7 +150,7 @@ def find_min(degree, visited):
     return index
 
 
-def degree_certain_graph(graph: [[]]):
+def degree_certain_graph(graph: List[List[float]]):
     """
     calculate the origin degree of the graph
     :param graph:
@@ -176,7 +177,7 @@ def extract_graph(graph, k, cores):
     return temp_graph, set(vertex)
 
 
-def find_connected_component(graph, vertexes, visited: []) -> [[]]:
+def find_connected_component(graph, vertexes, visited: List[int]) -> List[List[int]]:
     """
     find the connected vertexes groups in the graph which the path should take the visited points into consideration.
     :param graph:
@@ -268,7 +269,7 @@ def get_root(node: TreeNode) -> TreeNode:
     return node
 
 
-def construct_eta_k_tree(graph: [[]], k: int, stack: [], eta_threshold: []):
+def construct_eta_k_tree(graph: List[List[float]], k: int, stack: List[int], eta_threshold: List[float]):
     bottom = BottomTreeNode([], k, 1)
     visited = [False for _ in range(len(graph))]
     while len(stack) != 0:

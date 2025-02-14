@@ -1,7 +1,8 @@
 import random
+from typing import List
 
 
-def increase_prob(maps: [[]]) -> []:
+def increase_prob(maps: List[List[int]]) -> List[int]:
     lens = len(maps)
     index1, index2 = -1, -1
     while index1 == index2:
@@ -15,7 +16,7 @@ def increase_prob(maps: [[]]) -> []:
     return [index1, index2]
 
 
-def decrease_prob(maps: [[]]) -> []:
+def decrease_prob(maps: List[List[int]]) -> List[int]:
     lens = len(maps)
     index1, index2 = -1, -1
     while index1 == index2:
@@ -29,7 +30,7 @@ def decrease_prob(maps: [[]]) -> []:
     return [index1, index2]
 
 
-def pipeline_change_map(maps: [[]], increase_or_not: bool) -> []:
+def pipeline_change_map(maps: List[List[int]], increase_or_not: bool) -> List[int]:
     if increase_or_not:
         return increase_prob(maps)
     else:

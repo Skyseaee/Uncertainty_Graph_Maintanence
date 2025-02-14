@@ -1,4 +1,6 @@
 import os
+import random
+from typing import List
 
 DATA_PATH = './data'
 
@@ -21,17 +23,19 @@ def read_file(path: str):
     return index, max_prob, max_index + 1
 
 
-def construct_map(index: [[]], max_prob: float, max_index: int):
+def construct_map(index: List[List[int]], max_prob: float, max_index: int):
     maps = [[0 for _ in range(max_index)] for _ in range(max_index)]
     for i in index:
         v1, v2, prob = i[0], i[1], i[2]
+        if random.random() < 0.8:
+            prob = 0
         maps[v1][v2] = prob / max_prob
         maps[v2][v1] = prob / max_prob
 
     return maps
 
 
-def pipeline_read_data(filename: str) -> [[]]:
+def pipeline_read_data(filename: str) -> List[List[float]]:
     path = os.path.join(DATA_PATH, filename)
     index, max_prob, max_index = read_file(path)
     return construct_map(index, max_prob, max_index)

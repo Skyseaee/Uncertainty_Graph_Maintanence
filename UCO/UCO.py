@@ -1,3 +1,4 @@
+from typing import List
 import heap
 import copy
 from functools import lru_cache
@@ -5,7 +6,7 @@ from decorate import wrapper
 
 
 @wrapper
-def UCO_Index(graph: [[]]):
+def UCO_Index(graph: List[List[float]], filename: str = 'default'):
     vertex_num = len(graph)
     order = [[] for _ in range(vertex_num)]
 
@@ -47,7 +48,7 @@ def UCO_Index(graph: [[]]):
     return order
 
 
-def cal_prob(graph: [[]], index: int, k: int) -> float:
+def cal_prob(graph: List[List[float]], index: int, k: int) -> float:
     res = 1
     for i in range(0, k):
         res -= cal_prob_equal(graph, index, i)
@@ -55,7 +56,7 @@ def cal_prob(graph: [[]], index: int, k: int) -> float:
     return res
 
 
-def cal_prob_equal(graph: [[]], index: int, k: int) -> float:
+def cal_prob_equal(graph: List[List[float]], index: int, k: int) -> float:
     """
     cal prob of index in new graph
     :param graph: will change when edge removal
@@ -90,7 +91,7 @@ def cal_prob_equal(graph: [[]], index: int, k: int) -> float:
     return X(len(edges), k)
 
 
-def graph_is_empty(graph: [[]]) -> bool:
+def graph_is_empty(graph: List[List[float]]) -> bool:
     for i in graph:
         for j in i:
             if j != 0:
@@ -98,12 +99,12 @@ def graph_is_empty(graph: [[]]) -> bool:
     return True
 
 
-def remove_edge_from_graph(graph: [[]], x: int, y: int):
+def remove_edge_from_graph(graph: List[List[float]], x: int, y: int):
     graph[x][y] = .0
     # graph[y][x] = .0
 
 
-def print_res(index: [[]]):
+def print_res(index: List[List[int]]):
     for i, ins in enumerate(index):
         print('v' + str(i + 1), end=': ')
         for j in ins:
@@ -124,5 +125,4 @@ if __name__ == '__main__':
         [.0, .0, .0, .0, .0, .0, .5, .0, .0, .8],
         [.0, .0, .0, .0, .0, .0, .8, .0, .8, .0],
     ]
-
     print_res(UCO_Index(graph))

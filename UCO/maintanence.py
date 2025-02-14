@@ -1,12 +1,14 @@
 import copy
 import traceback
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ProcessPoolExecutor
+from typing import List
 
 import UCO
 import heap
 from read_file import pipeline_read_data
 from change_graph import pipeline_change_map
 from decorate import wrapper
+from graph_check import has_cycle
 
 
 class prob_of_vertex:
@@ -34,7 +36,7 @@ k-prob of the subset of changed vertex.
 """
 
 
-def cal_k_probs_when_inserting(graph: [[]], k_probs: [[]], k: int, edge: []):
+def cal_k_probs_when_inserting(graph: List[List[float]], k_probs: List[List[float]], k: int, edge: List[int]):
     """
     cal new k-probs for special k
     :param graph:
@@ -98,7 +100,7 @@ def cal_k_probs_when_inserting(graph: [[]], k_probs: [[]], k: int, edge: []):
     return probs
 
 
-def find_updating_vertex_when_inserting(index_of_u: int, graph: [[]], k_probs_of_vertexes: []) -> []:
+def find_updating_vertex_when_inserting(index_of_u: int, graph: List[List[float]], k_probs_of_vertexes: List[float]) -> List[int]:
     """
     use bfs to find which vertex should be updating, the lower_bound is k-probs of u when inserting
     :param index_of_u:
@@ -122,7 +124,7 @@ def find_updating_vertex_when_inserting(index_of_u: int, graph: [[]], k_probs_of
     return res
 
 
-def find_neighbors(graph: [[]], index: int) -> []:
+def find_neighbors(graph: List[List[float]], index: int) -> List[int]:
     res = []
     for i, e in enumerate(graph[index]):
         if i != index and e > 0:
@@ -131,7 +133,7 @@ def find_neighbors(graph: [[]], index: int) -> []:
     return res
 
 
-def updating_ended(k_probs: [], updating_vertex: [], upper_bound: float) -> bool:
+def updating_ended(k_probs: List[float], updating_vertex: List[int], upper_bound: float) -> bool:
     """
     check whether all the updating vertex is updated
     :param k_probs: the probs of k for each vertex
@@ -159,7 +161,7 @@ def upper_bound_updating(ub1: float, ub2: float) -> float:
     return ub1
 
 
-def delete_edges(graph: [[]], updating_vertex: []):
+def delete_edges(graph: List[List[float]], updating_vertex: List[int]):
     updating_vertex = set(updating_vertex)
     for i in range(len(graph)):
         for j in range(len(graph)):
@@ -169,7 +171,7 @@ def delete_edges(graph: [[]], updating_vertex: []):
     return graph
 
 
-def transpose_matrix(k_probs: [[]]):
+def transpose_matrix(k_probs: List[List[float]]):
     try:
         res = [[] for _ in range(len(k_probs[0]))]
         for i in range(len(k_probs)):
@@ -185,7 +187,7 @@ def transpose_matrix(k_probs: [[]]):
         exit(-1)
 
 
-def change_graph(graph: [[]]):
+def change_graph(graph: List[List[float]]):
     i, j = 2, 3
     assert i != j, "i can not equal to j"
 
@@ -198,7 +200,7 @@ def change_graph(graph: [[]]):
 
 
 @wrapper
-def core_maintenance(k_core, origin_heap, changed_points, graph):
+def core_maintenance(k_core, origin_heap, changed_points, graph, filename = 'unknown'):
     final_index = []
     for i in range(1, k_core + 1):
         final_index.append(cal_k_probs_when_inserting(graph, transpose_matrix(origin_heap), i, changed_points))
@@ -208,21 +210,23 @@ def core_maintenance(k_core, origin_heap, changed_points, graph):
 
 def cal_files(filename):
     graph = pipeline_read_data(filename)
-
-    heaps = UCO.UCO_Index(graph)
+    heaps = UCO.UCO_Index(graph, filename=filename)
 
     k_core = len(heaps[0])
-    for i in range(10):
+    for h in heaps:
+        k_core = max(k_core, len(h))
+    for i in range(1):
         indexes_of_changed_points = pipeline_change_map(graph, True)
-        UCO.UCO_Index(graph)
-
-        core_maintenance(k_core, heaps, indexes_of_changed_points, copy.deepcopy(graph))
+        print(UCO.UCO_Index(graph, filename=filename))
+        print(core_maintenance(k_core, heaps, indexes_of_changed_points, copy.deepcopy(graph), filename=filename))
 
 
 def main():
-    files = ['bio-CE-LC.edges', 'bio-SC-HT.edges', 'aves-geese-female-foraging.edges', 'aves-sparrow-social.edges', 'aves-thornbill-farine.edges']
-    with ThreadPoolExecutor(max_workers=10) as executor:
-        executor.map(cal_files, files)
+    # files = ['bio-CE-CX.edges', 'ca-GrQc.mtx.convert',]
+    files = ['aves-geese-female-foraging.edges']
+    # with ProcessPoolExecutor(max_workers=10) as executor:
+    #     executor.map(cal_files, files)
+    cal_files(files[0])
 
 
 if __name__ == '__main__':
