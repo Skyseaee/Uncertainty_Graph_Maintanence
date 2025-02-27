@@ -161,3 +161,224 @@
 02/14/2025 08:20:47 AM: func UCO_Index time is 0.067575s, test file is aves-geese-female-foraging.edges
 02/14/2025 08:20:47 AM: func UCO_Index time is 0.069524s, test file is aves-geese-female-foraging.edges
 02/14/2025 08:21:52 AM: func UCO_Index time is 0.008480s, test file is [[0.0, 0.5, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.5, 0.0, 0.8, 0.2, 0.6, 0.0, 0.0, 0.0, 0.0, 0.0], [0.2, 0.8, 0.0, 0.5, 0.8, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.2, 0.5, 0.0, 0.4, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.6, 0.8, 0.4, 0.0, 0.2, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.2, 0.0, 0.5, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.8, 0.5, 0.8], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.8, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0, 0.8], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.8, 0.0, 0.8, 0.0]]
+02/14/2025 08:40:18 AM: func UCO_Index time is 0.018757s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:40:18 AM: func UCO_Index time is 0.018659s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:41:20 AM: func UCO_Index time is 0.037919s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:41:38 AM: func UCO_Index time is 0.027559s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:41:59 AM: func UCO_Index time is 0.021974s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:41:59 AM: func UCO_Index time is 0.023773s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:52:16 AM: func UCO_Index time is 0.020054s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:52:16 AM: func UCO_Index time is 0.021324s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:52:16 AM: func core_maintenance time is 0.000817s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:52:40 AM: func UCO_Index time is 0.028250s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:52:41 AM: func UCO_Index time is 0.029737s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:52:41 AM: func core_maintenance time is 0.001138s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:54:44 AM: func UCO_Index time is 0.017271s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:54:44 AM: func UCO_Index time is 0.017354s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:54:44 AM: func core_maintenance time is 0.003038s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:54:55 AM: func UCO_Index time is 0.020923s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:54:55 AM: func UCO_Index time is 0.022202s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:54:55 AM: func core_maintenance time is 0.001558s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:55:16 AM: func UCO_Index time is 0.023393s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:55:16 AM: func UCO_Index time is 0.024840s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:55:16 AM: func core_maintenance time is 0.000686s, test file is aves-geese-female-foraging.edges
+02/14/2025 08:59:02 AM: func UCO_Index time is 2.148971s, test file is chesapeake.mtx.convert
+02/14/2025 08:59:02 AM: func core_maintenance time is 0.024676s, test file is chesapeake.mtx.convert
+
+02/14/2025 08:59:41 AM: func UCO_Index time is 2.196443s, test file is chesapeake.mtx.convert
+02/14/2025 08:59:41 AM: func core_maintenance time is 0.023638s, test file is chesapeake.mtx.convert
+02/14/2025 08:59:41 AM: func core_maintenance time is 0.026183s, test file is chesapeake.mtx.convert
+02/14/2025 08:59:41 AM: func core_maintenance time is 0.026215s, test file is chesapeake.mtx.convert
+02/14/2025 08:59:41 AM: func core_maintenance time is 0.051642s, test file is chesapeake.mtx.convert
+02/14/2025 08:59:41 AM: func core_maintenance time is 0.007244s, test file is chesapeake.mtx.convert
+02/14/2025 08:59:41 AM: func core_maintenance time is 0.072148s, test file is chesapeake.mtx.convert
+02/14/2025 08:59:41 AM: func core_maintenance time is 0.055621s, test file is chesapeake.mtx.convert
+02/14/2025 08:59:41 AM: func core_maintenance time is 0.026202s, test file is chesapeake.mtx.convert
+02/14/2025 08:59:41 AM: func core_maintenance time is 0.035490s, test file is chesapeake.mtx.convert
+02/14/2025 08:59:42 AM: func core_maintenance time is 0.059055s, test file is chesapeake.mtx.convert
+02/14/2025 09:00:02 AM: func UCO_Index time is 23.508720s, test file is rajat05.mtx
+02/14/2025 09:00:03 AM: func core_maintenance time is 0.947327s, test file is rajat05.mtx
+02/14/2025 09:00:04 AM: func core_maintenance time is 0.914685s, test file is rajat05.mtx
+02/14/2025 09:00:06 AM: func core_maintenance time is 1.499000s, test file is rajat05.mtx
+02/14/2025 09:00:06 AM: func core_maintenance time is 0.054761s, test file is rajat05.mtx
+02/14/2025 09:00:06 AM: func core_maintenance time is 0.112159s, test file is rajat05.mtx
+02/14/2025 09:00:06 AM: func core_maintenance time is 0.062196s, test file is rajat05.mtx
+02/14/2025 09:00:06 AM: func core_maintenance time is 0.063303s, test file is rajat05.mtx
+02/14/2025 09:00:07 AM: func core_maintenance time is 0.643862s, test file is rajat05.mtx
+02/14/2025 09:00:09 AM: func core_maintenance time is 1.632066s, test file is rajat05.mtx
+02/14/2025 09:00:09 AM: func core_maintenance time is 0.054910s, test file is rajat05.mtx
+02/14/2025 09:07:51 AM: func UCO_Index time is 491.552038s, test file is inf-euroroad.edges.convert
+02/14/2025 09:07:52 AM: func core_maintenance time is 0.860816s, test file is inf-euroroad.edges.convert
+02/14/2025 09:07:56 AM: func core_maintenance time is 3.495828s, test file is inf-euroroad.edges.convert
+02/14/2025 09:08:02 AM: func core_maintenance time is 5.881975s, test file is inf-euroroad.edges.convert
+02/14/2025 09:08:06 AM: func core_maintenance time is 3.594142s, test file is inf-euroroad.edges.convert
+02/14/2025 09:08:35 AM: func core_maintenance time is 28.889329s, test file is inf-euroroad.edges.convert
+02/14/2025 09:08:47 AM: func core_maintenance time is 11.488989s, test file is inf-euroroad.edges.convert
+02/14/2025 09:08:54 AM: func core_maintenance time is 7.282348s, test file is inf-euroroad.edges.convert
+02/14/2025 09:08:57 AM: func core_maintenance time is 2.643888s, test file is inf-euroroad.edges.convert
+02/14/2025 09:09:02 AM: func core_maintenance time is 3.766437s, test file is inf-euroroad.edges.convert
+02/14/2025 09:09:03 AM: func core_maintenance time is 0.859494s, test file is inf-euroroad.edges.convert
+02/27/2025 09:15:56 AM: func UCO_Index time is 2.177422s, test file is chesapeake.mtx.convert
+02/27/2025 09:15:56 AM: func core_maintenance time is 0.250189s, test file is chesapeake.mtx.convert
+02/27/2025 09:15:57 AM: func core_maintenance time is 0.429571s, test file is chesapeake.mtx.convert
+02/27/2025 09:15:57 AM: func core_maintenance time is 0.424734s, test file is chesapeake.mtx.convert
+02/27/2025 09:15:57 AM: func core_maintenance time is 0.264915s, test file is chesapeake.mtx.convert
+02/27/2025 09:15:58 AM: func core_maintenance time is 1.106237s, test file is chesapeake.mtx.convert
+02/27/2025 09:16:00 AM: func core_maintenance time is 1.111550s, test file is chesapeake.mtx.convert
+02/27/2025 09:16:01 AM: func core_maintenance time is 1.120108s, test file is chesapeake.mtx.convert
+02/27/2025 09:16:02 AM: func core_maintenance time is 1.124465s, test file is chesapeake.mtx.convert
+02/27/2025 09:16:03 AM: func core_maintenance time is 1.125724s, test file is chesapeake.mtx.convert
+02/27/2025 09:16:04 AM: func core_maintenance time is 1.130906s, test file is chesapeake.mtx.convert
+02/27/2025 09:17:56 AM: func UCO_Index time is 2.186520s, test file is chesapeake.mtx.convert
+02/27/2025 09:17:56 AM: chesapeake.mtx.convert filter: 0 Cost Time: 0.03794097900390625
+02/27/2025 09:17:56 AM: chesapeake.mtx.convert filter: 1 Cost Time: 0.0376124382019043
+02/27/2025 09:17:56 AM: chesapeake.mtx.convert filter: 2 Cost Time: 0.18582773208618164
+02/27/2025 09:17:56 AM: chesapeake.mtx.convert filter: 3 Cost Time: 0.037218570709228516
+02/27/2025 09:17:56 AM: func core_maintenance time is 0.298908s, test file is chesapeake.mtx.convert
+02/27/2025 09:17:57 AM: chesapeake.mtx.convert filter: 0 Cost Time: 0.2707245349884033
+02/27/2025 09:17:57 AM: chesapeake.mtx.convert filter: 1 Cost Time: 0.2704617977142334
+02/27/2025 09:17:57 AM: chesapeake.mtx.convert filter: 2 Cost Time: 0.28541994094848633
+02/27/2025 09:17:57 AM: chesapeake.mtx.convert filter: 3 Cost Time: 0.2708425521850586
+02/27/2025 09:17:57 AM: func core_maintenance time is 1.097723s, test file is chesapeake.mtx.convert
+02/27/2025 09:17:58 AM: chesapeake.mtx.convert filter: 0 Cost Time: 0.27255892753601074
+02/27/2025 09:17:58 AM: chesapeake.mtx.convert filter: 1 Cost Time: 0.27285146713256836
+02/27/2025 09:17:58 AM: chesapeake.mtx.convert filter: 2 Cost Time: 0.2858457565307617
+02/27/2025 09:17:58 AM: chesapeake.mtx.convert filter: 3 Cost Time: 0.2751007080078125
+02/27/2025 09:17:58 AM: func core_maintenance time is 1.106654s, test file is chesapeake.mtx.convert
+02/27/2025 09:17:59 AM: chesapeake.mtx.convert filter: 0 Cost Time: 0.27098798751831055
+02/27/2025 09:17:59 AM: chesapeake.mtx.convert filter: 1 Cost Time: 0.27588701248168945
+02/27/2025 09:17:59 AM: chesapeake.mtx.convert filter: 2 Cost Time: 0.2838759422302246
+02/27/2025 09:18:00 AM: chesapeake.mtx.convert filter: 3 Cost Time: 0.2738661766052246
+02/27/2025 09:18:00 AM: func core_maintenance time is 1.104867s, test file is chesapeake.mtx.convert
+02/27/2025 09:18:00 AM: chesapeake.mtx.convert filter: 0 Cost Time: 0.2723996639251709
+02/27/2025 09:18:00 AM: chesapeake.mtx.convert filter: 1 Cost Time: 0.27312803268432617
+02/27/2025 09:18:00 AM: chesapeake.mtx.convert filter: 2 Cost Time: 0.2858142852783203
+02/27/2025 09:18:01 AM: chesapeake.mtx.convert filter: 3 Cost Time: 0.2729160785675049
+02/27/2025 09:18:01 AM: func core_maintenance time is 1.104508s, test file is chesapeake.mtx.convert
+02/27/2025 09:18:01 AM: chesapeake.mtx.convert filter: 0 Cost Time: 0.2896997928619385
+02/27/2025 09:18:01 AM: chesapeake.mtx.convert filter: 1 Cost Time: 0.28464603424072266
+02/27/2025 09:18:02 AM: chesapeake.mtx.convert filter: 2 Cost Time: 0.28733372688293457
+02/27/2025 09:18:02 AM: chesapeake.mtx.convert filter: 3 Cost Time: 0.2853870391845703
+02/27/2025 09:18:02 AM: func core_maintenance time is 1.147420s, test file is chesapeake.mtx.convert
+02/27/2025 09:18:02 AM: chesapeake.mtx.convert filter: 0 Cost Time: 0.28732752799987793
+02/27/2025 09:18:02 AM: chesapeake.mtx.convert filter: 1 Cost Time: 0.288102388381958
+02/27/2025 09:18:03 AM: chesapeake.mtx.convert filter: 2 Cost Time: 0.2831106185913086
+02/27/2025 09:18:03 AM: chesapeake.mtx.convert filter: 3 Cost Time: 0.29094529151916504
+02/27/2025 09:18:03 AM: func core_maintenance time is 1.150563s, test file is chesapeake.mtx.convert
+02/27/2025 09:18:03 AM: chesapeake.mtx.convert filter: 0 Cost Time: 0.28075218200683594
+02/27/2025 09:18:04 AM: chesapeake.mtx.convert filter: 1 Cost Time: 0.28188347816467285
+02/27/2025 09:18:04 AM: chesapeake.mtx.convert filter: 2 Cost Time: 0.28376150131225586
+02/27/2025 09:18:04 AM: chesapeake.mtx.convert filter: 3 Cost Time: 0.2789633274078369
+02/27/2025 09:18:04 AM: func core_maintenance time is 1.125739s, test file is chesapeake.mtx.convert
+02/27/2025 09:18:04 AM: chesapeake.mtx.convert filter: 0 Cost Time: 0.034041404724121094
+02/27/2025 09:18:04 AM: chesapeake.mtx.convert filter: 1 Cost Time: 0.013329267501831055
+02/27/2025 09:18:04 AM: chesapeake.mtx.convert filter: 2 Cost Time: 0.12543058395385742
+02/27/2025 09:18:04 AM: chesapeake.mtx.convert filter: 3 Cost Time: 0.013049125671386719
+02/27/2025 09:18:04 AM: func core_maintenance time is 0.186054s, test file is chesapeake.mtx.convert
+02/27/2025 09:18:05 AM: chesapeake.mtx.convert filter: 0 Cost Time: 0.283954381942749
+02/27/2025 09:18:05 AM: chesapeake.mtx.convert filter: 1 Cost Time: 0.28481125831604004
+02/27/2025 09:18:05 AM: chesapeake.mtx.convert filter: 2 Cost Time: 0.28559231758117676
+02/27/2025 09:18:05 AM: chesapeake.mtx.convert filter: 3 Cost Time: 0.2869582176208496
+02/27/2025 09:18:05 AM: func core_maintenance time is 1.141641s, test file is chesapeake.mtx.convert
+02/27/2025 09:18:17 AM: func UCO_Index time is 23.546911s, test file is rajat05.mtx
+02/27/2025 09:18:17 AM: rajat05.mtx filter: 0 Cost Time: 0.055754661560058594
+02/27/2025 09:18:17 AM: rajat05.mtx filter: 1 Cost Time: 0.05511736869812012
+02/27/2025 09:18:20 AM: rajat05.mtx filter: 2 Cost Time: 2.5435845851898193
+02/27/2025 09:18:20 AM: rajat05.mtx filter: 3 Cost Time: 0.053693532943725586
+02/27/2025 09:18:20 AM: func core_maintenance time is 2.708403s, test file is rajat05.mtx
+02/27/2025 09:18:23 AM: rajat05.mtx filter: 0 Cost Time: 2.5206806659698486
+02/27/2025 09:18:25 AM: rajat05.mtx filter: 1 Cost Time: 2.44490647315979
+02/27/2025 09:18:28 AM: rajat05.mtx filter: 2 Cost Time: 2.4471752643585205
+02/27/2025 09:18:30 AM: rajat05.mtx filter: 3 Cost Time: 2.4051461219787598
+02/27/2025 09:18:30 AM: func core_maintenance time is 9.818322s, test file is rajat05.mtx
+02/27/2025 09:18:32 AM: rajat05.mtx filter: 0 Cost Time: 2.4009029865264893
+02/27/2025 09:18:35 AM: rajat05.mtx filter: 1 Cost Time: 2.4114603996276855
+02/27/2025 09:18:37 AM: rajat05.mtx filter: 2 Cost Time: 2.448237419128418
+02/27/2025 09:18:40 AM: rajat05.mtx filter: 3 Cost Time: 2.4225552082061768
+02/27/2025 09:18:40 AM: func core_maintenance time is 9.683560s, test file is rajat05.mtx
+02/27/2025 09:18:40 AM: rajat05.mtx filter: 0 Cost Time: 0.05637001991271973
+02/27/2025 09:18:40 AM: rajat05.mtx filter: 1 Cost Time: 0.05656719207763672
+02/27/2025 09:18:42 AM: rajat05.mtx filter: 2 Cost Time: 2.4938721656799316
+02/27/2025 09:18:42 AM: rajat05.mtx filter: 3 Cost Time: 0.05549144744873047
+02/27/2025 09:18:42 AM: func core_maintenance time is 2.662541s, test file is rajat05.mtx
+02/27/2025 09:18:45 AM: rajat05.mtx filter: 0 Cost Time: 2.5155532360076904
+02/27/2025 09:18:47 AM: rajat05.mtx filter: 1 Cost Time: 2.423267364501953
+02/27/2025 09:18:50 AM: rajat05.mtx filter: 2 Cost Time: 2.407024621963501
+02/27/2025 09:18:52 AM: rajat05.mtx filter: 3 Cost Time: 2.422682523727417
+02/27/2025 09:18:52 AM: func core_maintenance time is 9.768913s, test file is rajat05.mtx
+02/27/2025 09:18:55 AM: rajat05.mtx filter: 0 Cost Time: 2.425670623779297
+02/27/2025 09:18:57 AM: rajat05.mtx filter: 1 Cost Time: 2.4028117656707764
+02/27/2025 09:18:59 AM: rajat05.mtx filter: 2 Cost Time: 2.416562557220459
+02/27/2025 09:19:02 AM: rajat05.mtx filter: 3 Cost Time: 2.4182560443878174
+02/27/2025 09:19:02 AM: func core_maintenance time is 9.663722s, test file is rajat05.mtx
+02/27/2025 09:19:04 AM: rajat05.mtx filter: 0 Cost Time: 2.4045522212982178
+02/27/2025 09:19:07 AM: rajat05.mtx filter: 1 Cost Time: 2.4019429683685303
+02/27/2025 09:19:09 AM: rajat05.mtx filter: 2 Cost Time: 2.4284069538116455
+02/27/2025 09:19:11 AM: rajat05.mtx filter: 3 Cost Time: 2.4194509983062744
+02/27/2025 09:19:11 AM: func core_maintenance time is 9.654834s, test file is rajat05.mtx
+02/27/2025 09:19:14 AM: rajat05.mtx filter: 0 Cost Time: 2.3904545307159424
+02/27/2025 09:19:16 AM: rajat05.mtx filter: 1 Cost Time: 2.4230213165283203
+02/27/2025 09:19:19 AM: rajat05.mtx filter: 2 Cost Time: 2.4161264896392822
+02/27/2025 09:19:21 AM: rajat05.mtx filter: 3 Cost Time: 2.4107308387756348
+02/27/2025 09:19:21 AM: func core_maintenance time is 9.640703s, test file is rajat05.mtx
+02/27/2025 09:19:24 AM: rajat05.mtx filter: 0 Cost Time: 2.407028913497925
+02/27/2025 09:19:26 AM: rajat05.mtx filter: 1 Cost Time: 2.387557029724121
+02/27/2025 09:19:28 AM: rajat05.mtx filter: 2 Cost Time: 2.4163107872009277
+02/27/2025 09:19:31 AM: rajat05.mtx filter: 3 Cost Time: 2.42704701423645
+02/27/2025 09:19:31 AM: func core_maintenance time is 9.638329s, test file is rajat05.mtx
+02/27/2025 09:19:33 AM: rajat05.mtx filter: 0 Cost Time: 2.436194896697998
+02/27/2025 09:19:36 AM: rajat05.mtx filter: 1 Cost Time: 2.4378864765167236
+02/27/2025 09:19:38 AM: rajat05.mtx filter: 2 Cost Time: 2.4383060932159424
+02/27/2025 09:19:41 AM: rajat05.mtx filter: 3 Cost Time: 2.4093809127807617
+02/27/2025 09:19:41 AM: func core_maintenance time is 9.722156s, test file is rajat05.mtx
+02/27/2025 09:25:27 AM: func UCO_Index time is 453.574247s, test file is inf-euroroad.edges.convert
+02/27/2025 09:25:34 AM: inf-euroroad.edges.convert filter: 0 Cost Time: 5.824654579162598
+02/27/2025 09:25:39 AM: inf-euroroad.edges.convert filter: 1 Cost Time: 5.796167373657227
+02/27/2025 09:27:34 AM: inf-euroroad.edges.convert filter: 2 Cost Time: 114.7420437335968
+02/27/2025 09:27:40 AM: inf-euroroad.edges.convert filter: 3 Cost Time: 5.821790456771851
+02/27/2025 09:27:40 AM: func core_maintenance time is 132.185518s, test file is inf-euroroad.edges.convert
+02/27/2025 09:29:08 AM: inf-euroroad.edges.convert filter: 0 Cost Time: 87.34655547142029
+02/27/2025 09:30:07 AM: inf-euroroad.edges.convert filter: 1 Cost Time: 59.608479499816895
+02/27/2025 09:31:31 AM: inf-euroroad.edges.convert filter: 2 Cost Time: 84.22515106201172
+02/27/2025 09:32:30 AM: inf-euroroad.edges.convert filter: 3 Cost Time: 58.666083097457886
+02/27/2025 09:32:30 AM: func core_maintenance time is 289.847219s, test file is inf-euroroad.edges.convert
+02/27/2025 09:33:48 AM: inf-euroroad.edges.convert filter: 0 Cost Time: 77.19074821472168
+02/27/2025 09:33:49 AM: inf-euroroad.edges.convert filter: 1 Cost Time: 0.9984781742095947
+02/27/2025 09:36:03 AM: inf-euroroad.edges.convert filter: 2 Cost Time: 134.54047417640686
+02/27/2025 09:36:04 AM: inf-euroroad.edges.convert filter: 3 Cost Time: 1.0057427883148193
+02/27/2025 09:36:04 AM: func core_maintenance time is 213.736222s, test file is inf-euroroad.edges.convert
+02/27/2025 09:37:39 AM: inf-euroroad.edges.convert filter: 0 Cost Time: 94.93811917304993
+02/27/2025 09:37:40 AM: inf-euroroad.edges.convert filter: 1 Cost Time: 0.8452222347259521
+02/27/2025 09:39:54 AM: inf-euroroad.edges.convert filter: 2 Cost Time: 134.0236222743988
+02/27/2025 09:39:55 AM: inf-euroroad.edges.convert filter: 3 Cost Time: 0.8422253131866455
+02/27/2025 09:39:55 AM: func core_maintenance time is 230.649988s, test file is inf-euroroad.edges.convert
+02/27/2025 09:41:28 AM: inf-euroroad.edges.convert filter: 0 Cost Time: 92.86270236968994
+02/27/2025 09:42:45 AM: inf-euroroad.edges.convert filter: 1 Cost Time: 76.77368021011353
+02/27/2025 09:44:25 AM: inf-euroroad.edges.convert filter: 2 Cost Time: 99.54215121269226
+02/27/2025 09:45:42 AM: inf-euroroad.edges.convert filter: 3 Cost Time: 77.38397789001465
+02/27/2025 09:45:42 AM: func core_maintenance time is 346.563453s, test file is inf-euroroad.edges.convert
+02/27/2025 09:46:59 AM: inf-euroroad.edges.convert filter: 0 Cost Time: 76.96494746208191
+02/27/2025 09:48:17 AM: inf-euroroad.edges.convert filter: 1 Cost Time: 77.16986393928528
+02/27/2025 09:49:56 AM: inf-euroroad.edges.convert filter: 2 Cost Time: 98.99827170372009
+02/27/2025 09:51:13 AM: inf-euroroad.edges.convert filter: 3 Cost Time: 77.24496650695801
+02/27/2025 09:51:13 AM: func core_maintenance time is 330.378985s, test file is inf-euroroad.edges.convert
+02/27/2025 09:51:45 AM: inf-euroroad.edges.convert filter: 0 Cost Time: 32.18968939781189
+02/27/2025 09:51:50 AM: inf-euroroad.edges.convert filter: 1 Cost Time: 4.593492031097412
+02/27/2025 09:53:58 AM: inf-euroroad.edges.convert filter: 2 Cost Time: 127.79133439064026
+02/27/2025 09:54:02 AM: inf-euroroad.edges.convert filter: 3 Cost Time: 4.575820207595825
+02/27/2025 09:54:02 AM: func core_maintenance time is 169.151217s, test file is inf-euroroad.edges.convert
+02/27/2025 09:55:36 AM: inf-euroroad.edges.convert filter: 0 Cost Time: 93.4569354057312
+02/27/2025 09:57:05 AM: inf-euroroad.edges.convert filter: 1 Cost Time: 89.09545350074768
+02/27/2025 09:58:57 AM: inf-euroroad.edges.convert filter: 2 Cost Time: 112.25042676925659
+02/27/2025 10:00:26 AM: inf-euroroad.edges.convert filter: 3 Cost Time: 88.78404331207275
+02/27/2025 10:00:26 AM: func core_maintenance time is 383.587967s, test file is inf-euroroad.edges.convert
+02/27/2025 10:01:55 AM: inf-euroroad.edges.convert filter: 0 Cost Time: 88.5522346496582
+02/27/2025 10:03:24 AM: inf-euroroad.edges.convert filter: 1 Cost Time: 89.12950873374939
+02/27/2025 10:05:17 AM: inf-euroroad.edges.convert filter: 2 Cost Time: 113.06236910820007
+02/27/2025 10:06:48 AM: inf-euroroad.edges.convert filter: 3 Cost Time: 90.35435032844543
+02/27/2025 10:06:48 AM: func core_maintenance time is 381.099386s, test file is inf-euroroad.edges.convert
+02/27/2025 10:08:18 AM: inf-euroroad.edges.convert filter: 0 Cost Time: 89.93212723731995
+02/27/2025 10:09:47 AM: inf-euroroad.edges.convert filter: 1 Cost Time: 89.208242893219
+02/27/2025 10:11:39 AM: inf-euroroad.edges.convert filter: 2 Cost Time: 111.43410515785217
+02/27/2025 10:13:08 AM: inf-euroroad.edges.convert filter: 3 Cost Time: 89.59390568733215
+02/27/2025 10:13:08 AM: func core_maintenance time is 380.169272s, test file is inf-euroroad.edges.convert

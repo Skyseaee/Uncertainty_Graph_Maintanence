@@ -1,4 +1,6 @@
 import copy
+import logging
+import time
 import traceback
 from concurrent.futures import ProcessPoolExecutor
 from typing import List
@@ -36,7 +38,7 @@ k-prob of the subset of changed vertex.
 """
 
 
-def cal_k_probs_when_inserting(graph: List[List[float]], k_probs: List[List[float]], k: int, edge: List[int]):
+def cal_k_probs_when_inserting(graph: List[List[float]], k_probs: List[List[float]], k: int, edge: List[int], filter: int = 0):
     """
     cal new k-probs for special k
     :param graph:
@@ -51,10 +53,16 @@ def cal_k_probs_when_inserting(graph: List[List[float]], k_probs: List[List[floa
     # we suppose k-prob(u) <= k-prob(v)
     if probs[edge[0]] <= probs[edge[1]]:
         u = edge[0]
-
-    updating_vertexes = find_updating_vertex_when_inserting(u, graph, probs)
-    # delete edges
-    graph = delete_edges(graph, updating_vertexes)
+    if filter == 0 or filter == 2:
+        if k > 2 and k_probs[k-2][u] < .001:
+            return probs
+    
+    if filter == 0 or filter == 1 or filter == 3:
+        updating_vertexes = find_updating_vertex_when_inserting(u, graph, probs, filter)
+        # delete edges
+        graph = delete_edges(graph, updating_vertexes)
+    else:
+        updating_vertexes = [i for i in range(len(graph))]
     temp_vertex = set(updating_vertexes)
 
     updating_vertexes = [[vertex, False] for vertex in updating_vertexes]
@@ -100,7 +108,7 @@ def cal_k_probs_when_inserting(graph: List[List[float]], k_probs: List[List[floa
     return probs
 
 
-def find_updating_vertex_when_inserting(index_of_u: int, graph: List[List[float]], k_probs_of_vertexes: List[float]) -> List[int]:
+def find_updating_vertex_when_inserting(index_of_u: int, graph: List[List[float]], k_probs_of_vertexes: List[float], filter: int = 0) -> List[int]:
     """
     use bfs to find which vertex should be updating, the lower_bound is k-probs of u when inserting
     :param index_of_u:
@@ -116,10 +124,16 @@ def find_updating_vertex_when_inserting(index_of_u: int, graph: List[List[float]
         temp = queue[0]
         queue = queue[1:]
         for index in find_neighbors(graph, temp):
-            if not visited[index] and k_probs_of_vertexes[index] >= k_probs_of_vertexes[index_of_u]:
-                visited[index] = True
-                queue.append(index)
-                res.append(index)
+            if filter == 3:
+                if not visited[index]:
+                    visited[index] = True
+                    queue.append(index)
+                    res.append(index)       
+            else:
+                if not visited[index] and k_probs_of_vertexes[index] >= k_probs_of_vertexes[index_of_u]:
+                    visited[index] = True
+                    queue.append(index)
+                    res.append(index)
 
     return res
 
@@ -199,11 +213,25 @@ def change_graph(graph: List[List[float]]):
     return graph
 
 
+def reorg_heap(heap: List[List[float]], k_core: int):
+    res = [[] for _ in range(k_core)]
+    for r in range(k_core):
+        for h in heap:
+            if len(h) <= r:
+                res[r].append(.0)
+            else:
+                res[r].append(h[r])
+    return res
+
+
 @wrapper
 def core_maintenance(k_core, origin_heap, changed_points, graph, filename = 'unknown'):
     final_index = []
-    for i in range(1, k_core + 1):
-        final_index.append(cal_k_probs_when_inserting(graph, transpose_matrix(origin_heap), i, changed_points))
+    for j in range(4):
+        now = time.time()
+        for i in range(1, k_core + 1):
+            final_index.append(cal_k_probs_when_inserting(graph, origin_heap, i, changed_points, j))
+        logging.info(f"{filename} filter: {j} Cost Time: {time.time() - now}")
 
     return final_index
 
@@ -212,21 +240,26 @@ def cal_files(filename):
     graph = pipeline_read_data(filename)
     heaps = UCO.UCO_Index(graph, filename=filename)
 
-    k_core = len(heaps[0])
+    k_core = 0
+    for h in heaps:
+        k_core = max(len(h), k_core)
+
+    temp_heap = reorg_heap(heaps, k_core)
+
     for h in heaps:
         k_core = max(k_core, len(h))
-    for i in range(1):
+    for i in range(10):
         indexes_of_changed_points = pipeline_change_map(graph, True)
-        print(UCO.UCO_Index(graph, filename=filename))
-        print(core_maintenance(k_core, heaps, indexes_of_changed_points, copy.deepcopy(graph), filename=filename))
+        # UCO.UCO_Index(graph, filename=filename)
+        core_maintenance(k_core, temp_heap, indexes_of_changed_points, copy.deepcopy(graph), filename=filename)
 
 
 def main():
-    # files = ['bio-CE-CX.edges', 'ca-GrQc.mtx.convert',]
-    files = ['aves-geese-female-foraging.edges']
-    # with ProcessPoolExecutor(max_workers=10) as executor:
-    #     executor.map(cal_files, files)
-    cal_files(files[0])
+    files = ['rajat05.mtx', 'chesapeake.mtx.convert', 'inf-euroroad.edges.convert']
+    # files = ['aves-geese-female-foraging.edges']
+    with ProcessPoolExecutor(max_workers=10) as executor:
+        executor.map(cal_files, files)
+    # cal_files(files[0])
 
 
 if __name__ == '__main__':

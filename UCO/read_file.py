@@ -27,8 +27,8 @@ def construct_map(index: List[List[int]], max_prob: float, max_index: int):
     maps = [[0 for _ in range(max_index)] for _ in range(max_index)]
     for i in index:
         v1, v2, prob = i[0], i[1], i[2]
-        if random.random() < 0.8:
-            prob = 0
+        # if random.random() < 0.8:
+        #     prob = 0
         maps[v1][v2] = prob / max_prob
         maps[v2][v1] = prob / max_prob
 
