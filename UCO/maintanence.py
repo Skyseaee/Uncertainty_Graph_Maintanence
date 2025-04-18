@@ -227,11 +227,11 @@ def reorg_heap(heap: List[List[float]], k_core: int):
 @wrapper
 def core_maintenance(k_core, origin_heap, changed_points, graph, filename = 'unknown'):
     final_index = []
-    for j in range(4):
-        now = time.time()
-        for i in range(1, k_core + 1):
-            final_index.append(cal_k_probs_when_inserting(graph, origin_heap, i, changed_points, j))
-        logging.info(f"{filename} filter: {j} Cost Time: {time.time() - now}")
+    # for j in range(4):
+    # now = time.time()
+    for i in range(1, k_core + 1):
+        final_index.append(cal_k_probs_when_inserting(graph, origin_heap, i, changed_points, 0))
+    # logging.info(f"{filename} filter: {j} Cost Time: {time.time() - now}")
 
     return final_index
 
@@ -255,11 +255,11 @@ def cal_files(filename):
 
 
 def main():
-    files = ['rajat05.mtx', 'chesapeake.mtx.convert', 'inf-euroroad.edges.convert']
+    files = ['bio-CE-CX.edges']
     # files = ['aves-geese-female-foraging.edges']
-    with ProcessPoolExecutor(max_workers=10) as executor:
-        executor.map(cal_files, files)
-    # cal_files(files[0])
+    # with ProcessPoolExecutor(max_workers=10) as executor:
+    #     executor.map(cal_files, files)
+    cal_files(files[0])
 
 
 if __name__ == '__main__':

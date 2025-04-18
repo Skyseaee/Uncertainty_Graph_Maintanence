@@ -382,3 +382,27 @@
 02/27/2025 10:11:39 AM: inf-euroroad.edges.convert filter: 2 Cost Time: 111.43410515785217
 02/27/2025 10:13:08 AM: inf-euroroad.edges.convert filter: 3 Cost Time: 89.59390568733215
 02/27/2025 10:13:08 AM: func core_maintenance time is 380.169272s, test file is inf-euroroad.edges.convert
+03/11/2025 06:54:42 AM: func UCO_Index time is 0.034277s, test file is chesapeake.mtx.convert
+03/11/2025 06:54:42 AM: func core_maintenance time is 0.004959s, test file is chesapeake.mtx.convert
+03/11/2025 06:54:42 AM: func core_maintenance time is 0.006197s, test file is chesapeake.mtx.convert
+03/11/2025 06:54:42 AM: func core_maintenance time is 0.006229s, test file is chesapeake.mtx.convert
+03/11/2025 06:54:42 AM: func core_maintenance time is 0.001899s, test file is chesapeake.mtx.convert
+03/11/2025 06:54:42 AM: func core_maintenance time is 0.007434s, test file is chesapeake.mtx.convert
+03/11/2025 06:54:42 AM: func core_maintenance time is 0.008043s, test file is chesapeake.mtx.convert
+03/11/2025 06:54:42 AM: func core_maintenance time is 0.008776s, test file is chesapeake.mtx.convert
+03/11/2025 06:54:42 AM: func core_maintenance time is 0.009346s, test file is chesapeake.mtx.convert
+03/11/2025 06:54:42 AM: func core_maintenance time is 0.004283s, test file is chesapeake.mtx.convert
+03/11/2025 06:54:42 AM: func core_maintenance time is 0.010199s, test file is chesapeake.mtx.convert
+03/11/2025 02:22:44 PM: func UCO_Index time is 26686.671244s, test file is ca-GrQc.mtx.convert
+03/11/2025 02:23:10 PM: func core_maintenance time is 21.432309s, test file is ca-GrQc.mtx.convert
+03/11/2025 02:23:24 PM: func core_maintenance time is 10.113081s, test file is ca-GrQc.mtx.convert
+03/11/2025 02:23:39 PM: func core_maintenance time is 10.344898s, test file is ca-GrQc.mtx.convert
+03/11/2025 02:23:53 PM: func core_maintenance time is 10.391469s, test file is ca-GrQc.mtx.convert
+03/11/2025 02:24:08 PM: func core_maintenance time is 10.440418s, test file is ca-GrQc.mtx.convert
+03/11/2025 02:24:22 PM: func core_maintenance time is 10.331462s, test file is ca-GrQc.mtx.convert
+03/11/2025 02:24:36 PM: func core_maintenance time is 10.157936s, test file is ca-GrQc.mtx.convert
+03/11/2025 02:24:51 PM: func core_maintenance time is 10.182289s, test file is ca-GrQc.mtx.convert
+03/11/2025 02:25:05 PM: func core_maintenance time is 10.307034s, test file is ca-GrQc.mtx.convert
+03/11/2025 02:25:21 PM: func core_maintenance time is 11.926387s, test file is ca-GrQc.mtx.convert
+03/12/2025 11:10:31 AM: func construct_tree time is 0.003527s, test file is [[0.0, 0.5, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.5, 0.0, 0.8, 0.2, 0.6, 0.0, 0.0, 0.0, 0.0, 0.0], [0.2, 0.8, 0.0, 0.5, 0.8, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.2, 0.5, 0.0, 0.4, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.6, 0.8, 0.4, 0.0, 0.2, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.2, 0.0, 0.5, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.8, 0.5, 0.8], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.8, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.0, 0.0, 0.8], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.8, 0.0, 0.8, 0.0]]
+04/03/2025 10:21:56 AM: func UCO_Index time is 0.001215s, test file is [[0.0, 0.6, 0.8, 0.0], [0.6, 0.0, 0.8, 0.4], [0.8, 0.8, 0.0, 0.8], [0.0, 0.4, 0.8, 0.0]]

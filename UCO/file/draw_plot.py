@@ -16,10 +16,10 @@ def format_value(y):
         return f"{y:.2f}" if y != int(y) else f"{int(y)}"
 
 
-with open("workdata.csv") as f:
+with open("uctdata.csv") as f:
     df = pd.read_csv(f, skipinitialspace=True)
 
-    output_dir = "dataset_plots"
+    output_dir = "uct_dataset_plots"
     os.makedirs(output_dir, exist_ok=True)
     df = df.dropna(axis=1, how='all')
 
@@ -32,7 +32,8 @@ with open("workdata.csv") as f:
     for dataset in datasets:
         # 筛选数据
         subset = df[df['DATASET'] == dataset]
-        uco = subset[subset['LABEL'] == 'UCO'].iloc[0, 2:].astype(float)
+        # print(subset['LABEL'])
+        uco = subset[subset['LABEL'] == 'UCT'].iloc[0, 2:].astype(float)
         maint = subset[subset['LABEL'] == 'MAINTENANCE'].iloc[0, 2:].astype(float)
         
         # 创建画布
@@ -40,7 +41,7 @@ with open("workdata.csv") as f:
 
         uco_line = ax.semilogy(uco.index.astype(int), uco, 
                           marker='o', linestyle='-', linewidth=2, 
-                          color='tab:blue', label='UCO', markersize=8)
+                          color='tab:blue', label='UCT', markersize=8)
         maint_line = ax.semilogy(maint.index.astype(int), maint, 
                             marker='s', linestyle='--', linewidth=2,
                             color='tab:red', label='MAINTENANCE', markersize=8)
